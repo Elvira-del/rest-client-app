@@ -18,7 +18,10 @@ export default config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
       '@typescript-eslint/triple-slash-reference': 'off',
       'react/react-in-jsx-scope': 'off',
     },
@@ -30,21 +33,3 @@ export default config(
   },
   eslintConfigPrettier
 );
-
-// export default tseslint.config([
-//   globalIgnores(['dist']),
-//   {
-//     files: ['**/*.{ts,tsx}'],
-//     extends: [
-//       ...next(['core-web-vitals']),
-//       js.configs.recommended,
-//       tseslint.configs.recommended,
-//       reactHooks.configs['recommended-latest'],
-//       eslintConfigPrettier,
-//     ],
-//     languageOptions: {
-//       ecmaVersion: 2020,
-//       globals: globals.browser,
-//     },
-//   },
-// ]);
