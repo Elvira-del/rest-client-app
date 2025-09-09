@@ -1,25 +1,40 @@
-import js from "@eslint/js";
-import globals from "globals";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
-import tseslint from "typescript-eslint";
-import { globalIgnores } from "eslint/config";
-import eslintConfigPrettier from "eslint-config-prettier/flat";
+import js from '@eslint/js';
+import globals from 'globals';
+import reactHooks from 'eslint-plugin-react-hooks';
+import tseslint from 'typescript-eslint';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
+import next from 'eslint-config-next';
 
-export default tseslint.config([
-  globalIgnores(["dist"]),
+export default defineConfig([
+  { ignores: ['.next', 'dist', 'coverage'] },
+  ...next(['core-web-vitals']),
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  reactHooks.configs['recommended-latest'],
   {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.recommended,
-      reactHooks.configs["recommended-latest"],
-      reactRefresh.configs.vite,
-      eslintConfigPrettier,
-    ],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2023,
+      sourceType: 'module',
       globals: globals.browser,
     },
   },
+  eslintConfigPrettier,
 ]);
+
+// export default tseslint.config([
+//   globalIgnores(['dist']),
+//   {
+//     files: ['**/*.{ts,tsx}'],
+//     extends: [
+//       ...next(['core-web-vitals']),
+//       js.configs.recommended,
+//       tseslint.configs.recommended,
+//       reactHooks.configs['recommended-latest'],
+//       eslintConfigPrettier,
+//     ],
+//     languageOptions: {
+//       ecmaVersion: 2020,
+//       globals: globals.browser,
+//     },
+//   },
+// ]);
