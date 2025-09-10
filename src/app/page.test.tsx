@@ -6,7 +6,7 @@ describe('Page', () => {
   it('should render with the title visible', () => {
     render(<Page />);
     expect(
-      screen.getByRole('heading', { name: /hello, next\.js!/i })
+      screen.getByRole('heading', { name: /main page/i })
     ).toBeInTheDocument();
   });
 });
