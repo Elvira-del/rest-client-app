@@ -7,5 +7,10 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
+    server: {
+      deps: {
+        inline: ['next-intl'],
+      },
+    },
   },
 });
