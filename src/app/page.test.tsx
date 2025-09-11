@@ -3,13 +3,13 @@ import { render, screen } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import messages from '../messages/en.json';
 
-import Page from './[locale]/page';
+import HomePage from './[locale]/page';
 
-describe('Page', () => {
+describe('HomePage', () => {
   it('should render with the title visible', () => {
     render(
       <NextIntlClientProvider locale="en" messages={messages}>
-        <Page />
+        <HomePage />
       </NextIntlClientProvider>
     );
     expect(

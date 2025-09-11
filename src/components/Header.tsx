@@ -1,5 +1,8 @@
+'use client';
+
+import { Button } from '@components/ui/button';
+import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import { Globe, House } from 'lucide-react';
-import Link from 'next/link';
 import {
   Select,
   SelectContent,
@@ -7,9 +10,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Button } from '@components/ui/button';
+import { useLocale } from 'next-intl';
 
 export const Header = () => {
+  const locale = useLocale();
+
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleSwitchLang = (value: string) => {
+    router.replace(pathname, { locale: value });
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300">
       <div className="container flex h-16 items-center justify-between px-4">
@@ -23,17 +35,18 @@ export const Header = () => {
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <Globe size={16} />
-            <Select>
+            <Select value={locale} onValueChange={handleSwitchLang}>
               <SelectTrigger className="w-20">
-                <SelectValue placeholder="EN" />
+                <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="english">EN</SelectItem>
-                <SelectItem value="german">DE</SelectItem>
-                <SelectItem value="russian">RU</SelectItem>
+                <SelectItem value="en">EN</SelectItem>
+                <SelectItem value="de">DE</SelectItem>
+                <SelectItem value="ru">RU</SelectItem>
               </SelectContent>
             </Select>
           </div>
+
           <div className="flex gap-2">
             <Button variant="outline" type="button">
               Sign In
