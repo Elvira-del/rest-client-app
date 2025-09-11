@@ -1,0 +1,9 @@
+{
+  "Header": {
+    "signin": "Anmelden",
+    "signup": "Registrieren"
+  },
+  "HomePage": {
+    "title": "Hauptseite"
+  }
+}
