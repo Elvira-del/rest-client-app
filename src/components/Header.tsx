@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@components/ui/button';
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
+import { useLocale, useTranslations } from 'next-intl';
 import { Globe, House } from 'lucide-react';
 import {
   Select,
@@ -10,9 +10,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { useLocale } from 'next-intl';
+import { Button } from '@components/ui/button';
 
 export const Header = () => {
+  const t = useTranslations('Header');
   const locale = useLocale();
 
   const pathname = usePathname();
@@ -49,9 +50,9 @@ export const Header = () => {
 
           <div className="flex gap-2">
             <Button variant="outline" type="button">
-              Sign In
+              {t('signin')}
             </Button>
-            <Button type="button">Sign Up</Button>
+            <Button type="button">{t('signup')}</Button>
           </div>
         </div>
       </div>
