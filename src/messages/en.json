@@ -11,6 +11,33 @@
     "about": {
       "subtitle": "About This Project",
       "content": "This REST client application is a modern, lightweight alternative to Postman, built with cutting-edge web technologies. It provides developers with an intuitive interface for testing APIs, managing requests, and organizing their development workflow."
+    },
+    "features": {
+      "subtitle": "Key Features",
+      "request": {
+        "title": "HTTP Requests",
+        "content": "Make HTTP requests with full customization"
+      },
+      "history": {
+        "title": "Request History",
+        "content": "Automatic request history tracking"
+      },
+      "variables": {
+        "title": "Variables",
+        "content": "Environment variables management"
+      },
+      "auth": {
+        "title": "Authentication",
+        "content": "Secure user authentication"
+      },
+      "lang": {
+        "title": "Multi-language",
+        "content": "Multi-language support"
+      },
+      "stack": {
+        "title": "Modern Stack",
+        "content": "Built with Next.js, TypeScript, and Tailwind CSS"
+      }
     }
   }
 }

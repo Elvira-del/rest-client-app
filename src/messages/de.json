@@ -11,6 +11,33 @@
     "about": {
       "subtitle": "Über dieses Projekt",
       "content": "Diese REST-Clientanwendung ist eine moderne, leichtgewichtige Alternative zu Postman, die mit modernsten Webtechnologien erstellt wurde. Es bietet Entwicklern eine intuitive Benutzeroberfläche zum Testen von APIs, zum Verwalten von Anfragen und zum Organisieren ihres Entwicklungsworkflows."
+    },
+    "features": {
+      "subtitle": "Hauptmerkmale",
+      "request": {
+        "title": "HTTP-Anfragen",
+        "content": "Stellen Sie HTTP-Anfragen mit vollständiger Anpassung"
+      },
+      "history": {
+        "title": "Verlauf der Anfrage",
+        "content": "Automatische Verfolgung des Anforderungsverlaufs"
+      },
+      "variables": {
+        "title": "Variablen",
+        "content": "Verwaltung von Umgebungsvariablen"
+      },
+      "auth": {
+        "title": "Authentifizierung",
+        "content": "Sichere Benutzerauthentifizierung"
+      },
+      "lang": {
+        "title": "Mehrsprachig",
+        "content": "Mehrsprachige Unterstützung"
+      },
+      "stack": {
+        "title": "Moderner Stack",
+        "content": "Erstellt mit Next.js, TypeScript und Tailwind CSS"
+      }
     }
   }
 }

@@ -1,7 +1,15 @@
 import { useTranslations } from 'next-intl';
 import { SignButton } from './SignButton';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Code } from 'lucide-react';
+import {
+  CircleCheckBig,
+  Clock,
+  Code,
+  Globe,
+  Send,
+  Settings,
+  Shield,
+} from 'lucide-react';
 
 export const Main = () => {
   const t = useTranslations('Main');
@@ -36,6 +44,97 @@ export const Main = () => {
               </p>
             </CardContent>
           </Card>
+        </section>
+
+        <section>
+          <div className="space-y-6">
+            <h2 className="text-2xl text-center">{t('features.subtitle')}</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    <Send className="h-5 w-5 text-primary" />
+                    <h3>{t('features.request.title')}</h3>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    {t('features.request.content')}
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    <Clock className="h-5 w-5 text-primary" />
+                    <h3>{t('features.history.title')}</h3>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    {t('features.history.content')}
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    <Settings className="h-5 w-5 text-primary" />
+                    <h3>{t('features.variables.title')}</h3>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    {t('features.variables.content')}
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    <Shield className="h-5 w-5 text-primary" />
+                    <h3>{t('features.auth.title')}</h3>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    {t('features.auth.content')}
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    <Globe className="h-5 w-5 text-primary" />
+                    <h3>{t('features.lang.title')}</h3>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    {t('features.lang.content')}
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    <CircleCheckBig className="h-5 w-5 text-primary" />
+                    <h3>{t('features.stack.title')}</h3>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    {t('features.stack.content')}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </section>
       </div>
     </main>
