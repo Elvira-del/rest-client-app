@@ -13,7 +13,9 @@ describe('HomePage', () => {
       </NextIntlClientProvider>
     );
     expect(
-      screen.getByRole('heading', { name: /main page/i })
+      screen.getByRole('heading', {
+        name: /rest client - api testing made simple/i,
+      })
     ).toBeInTheDocument();
   });
 });
