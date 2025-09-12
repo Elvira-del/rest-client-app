@@ -7,6 +7,10 @@
     "hero": {
       "title": "REST Client - API-Tests leicht gemacht",
       "description": "Ein leichtes, leistungsstarkes Tool zum Testen und Debuggen von REST-APIs"
+    },
+    "about": {
+      "subtitle": "Über dieses Projekt",
+      "content": "Diese REST-Clientanwendung ist eine moderne, leichtgewichtige Alternative zu Postman, die mit modernsten Webtechnologien erstellt wurde. Es bietet Entwicklern eine intuitive Benutzeroberfläche zum Testen von APIs, zum Verwalten von Anfragen und zum Organisieren ihres Entwicklungsworkflows."
     }
   }
 }

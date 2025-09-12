@@ -1,5 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { SignButton } from './SignButton';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Code } from 'lucide-react';
 
 export const Main = () => {
   const t = useTranslations('Main');
@@ -18,6 +20,22 @@ export const Main = () => {
               <SignButton role={'signup'} type={'button'} />
             </div>
           </div>
+        </section>
+
+        <section>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Code className="h-6 w-6 text-primary" />
+                <h2>{t('about.subtitle')}</h2>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground leading-relaxed">
+                {t('about.content')}
+              </p>
+            </CardContent>
+          </Card>
         </section>
       </div>
     </main>
