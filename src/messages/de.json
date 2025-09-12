@@ -4,6 +4,9 @@
     "signup": "Registrieren"
   },
   "Main": {
-    "title": "Hauptseite"
+    "hero": {
+      "title": "REST Client - API-Tests leicht gemacht",
+      "description": "Ein leichtes, leistungsstarkes Tool zum Testen und Debuggen von REST-APIs"
+    }
   }
 }

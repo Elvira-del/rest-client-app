@@ -4,6 +4,9 @@
     "signup": "Sign Up"
   },
   "Main": {
-    "title": "Main page"
+    "hero": {
+      "title": "REST Client - API Testing Made Simple",
+      "description": "A lightweight, powerful tool for testing and debugging REST APIs"
+    }
   }
 }
