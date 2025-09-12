@@ -38,6 +38,81 @@
         "title": "Modern Stack",
         "content": "Built with Next.js, TypeScript, and Tailwind CSS"
       }
+    },
+    "development": {
+      "subtitle": "Development Team",
+      "developers": {
+        "title": "Development Team",
+        "content": "Built by cool people who created this app with a clear, minimalistic, and accessible design.",
+        "team": {
+          "first": {
+            "name": "Elvira Krutova - Frontend Developer/Team Lead",
+            "description": "Focused on UI implementation, i18n, and project setup."
+          },
+          "second": {
+            "name": "Pavel Kozin - Frontend Developer",
+            "description": "Worked on API requests and testing."
+          },
+          "third": {
+            "name": "Konstantin Kukukshkin - Frontend Developer",
+            "description": "Contributed to API integration and error handling."
+          }
+        },
+        "badge": {
+          "first": "Next.js",
+          "second": "TypeScript",
+          "third": "Tailwind CSS"
+        }
+      },
+      "details": {
+        "title": "Project Details",
+        "list": {
+          "firstitem": {
+            "title": "Architecture",
+            "description": "Modern Next.js application with component-based architecture"
+          },
+          "seconditem": {
+            "title": "Technologies",
+            "description": "Next.js, TypeScript, Tailwind CSS v4, Shadcn/ui components"
+          },
+          "thirditem": {
+            "title": "Features",
+            "description": "Authentication, i18n, responsive design, error boundaries"
+          },
+          "fourthitem": {
+            "title": "Performance",
+            "description": "Lazy loading, code splitting, optimized bundle size"
+          }
+        },
+        "badge": {
+          "first": "PWA Ready",
+          "second": "Mobile First",
+          "third": "Accessible"
+        }
+      },
+      "course": {
+        "title": "Course Information",
+        "content": "This project was developed as part of an advanced web development course, demonstrating modern Next.js patterns, authentication, internationalization, and responsive design principles.",
+        "list": {
+          "firstitem": {
+            "title": "Learning Objectives",
+            "description": "Master modern web development patterns and best practices"
+          },
+          "seconditem": {
+            "title": "Key Concepts",
+            "description": "Component architecture, state management, authentication flows"
+          },
+          "thirditem": {
+            "title": "Practical Skills",
+            "description": "Building production-ready applications with modern tooling"
+          }
+        },
+        "badge": {
+          "first": "Web Development",
+          "second": "Frontend",
+          "third": "API Design"
+        }
+      }
     }
   }
 }
