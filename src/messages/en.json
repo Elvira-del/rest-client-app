@@ -1,9 +1,9 @@
 {
-  "Header": {
+  "SignButton": {
     "signin": "Sign In",
     "signup": "Sign Up"
   },
-  "HomePage": {
+  "Main": {
     "title": "Main page"
   }
 }
