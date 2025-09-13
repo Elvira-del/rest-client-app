@@ -22,11 +22,7 @@ type AuthFormProps = {
   };
 };
 
-export default function AuthForm({
-  onSubmit,
-  texts,
-  footer,
-}: AuthFormProps ) {
+export default function AuthForm({ onSubmit, texts, footer }: AuthFormProps) {
   const t = useTranslations('Auth');
   const {
     register,
@@ -49,11 +45,11 @@ export default function AuthForm({
             </p>
           </div>
 
-          <form 
-            onSubmit={handleSubmit(onSubmit)} 
-            noValidate 
-            className="space-y-4" 
-           >
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+            className="space-y-4"
+          >
             <div className="grid gap-1">
               <label htmlFor="email" className="text-sm font-medium">
                 {t('email')}
@@ -101,15 +97,15 @@ export default function AuthForm({
             >
               {t(texts.submitKey)}
             </button>
-              <p className="text-center text-sm text-muted-foreground">
-                {t(footer.promptKey)}
-                <Link
-                  href={footer.linkHref}
-                  className="ml-2 font-medium underline underline-offset-4 hover:no-underline"
-                >
-                  {t(footer.linkKey)}
-                </Link>
-              </p>
+            <p className="text-center text-sm text-muted-foreground">
+              {t(footer.promptKey)}
+              <Link
+                href={footer.linkHref}
+                className="ml-2 font-medium underline underline-offset-4 hover:no-underline"
+              >
+                {t(footer.linkKey)}
+              </Link>
+            </p>
           </form>
         </div>
       </div>

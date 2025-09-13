@@ -21,7 +21,7 @@
       "invalidEmail": "Invalid email"
     }
   },
-  "Main": {
+  "MainBeforeAuth": {
     "hero": {
       "title": "REST Client - API Testing Made Simple",
       "description": "A lightweight, powerful tool for testing and debugging REST APIs"
@@ -131,6 +131,25 @@
           "third": "API Design"
         }
       }
+    }
+  },
+  "MainAfterAuth": {
+    "title": "Welcome back, {username}!",
+    "description": "Choose an option to get started",
+    "rest-client": {
+      "title": "REST Client",
+      "description": "Make HTTP requests and test APIs",
+      "button": "Open REST Client"
+    },
+    "history": {
+      "title": "History",
+      "description": "View your request history",
+      "button": "View History"
+    },
+    "variables": {
+      "title": "Variables",
+      "description": "Manage your environment variables",
+      "button": "Manage Variables"
     }
   }
 }

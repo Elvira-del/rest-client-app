@@ -15,5 +15,20 @@ export const routing = defineRouting({
       ru: '/signup',
       de: '/signup',
     },
+    '/rest-client': {
+      en: '/rest-client',
+      ru: '/rest-client',
+      de: '/rest-client',
+    },
+    '/history': {
+      en: '/history',
+      ru: '/history',
+      de: '/history',
+    },
+    '/variables': {
+      en: '/variables',
+      ru: '/variables',
+      de: '/variables',
+    },
   },
 });
