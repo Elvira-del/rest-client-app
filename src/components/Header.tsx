@@ -53,7 +53,7 @@ export const Header = () => {
             </Link>
             <Link href="/signup">
               <SignButton role={'signup'} type={'button'} />
-            </Link>        
+            </Link>
           </div>
         </div>
       </div>

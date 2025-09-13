@@ -21,7 +21,7 @@
       "invalidEmail": "Invalid email"
     }
   },
-  "Main": {
+  "MainBeforeAuth": {
     "hero": {
       "title": "REST Client - API Testing Made Simple",
       "description": "A lightweight, powerful tool for testing and debugging REST APIs"
