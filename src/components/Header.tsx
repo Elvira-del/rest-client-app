@@ -48,8 +48,10 @@ export const Header = () => {
           </div>
 
           <div className="flex gap-2">
-            <SignButton role={'signin'} type={'button'} />
-            <SignButton role={'signup'} type={'button'} />
+            <Link href="/signin">
+              <SignButton role={'signin'} type={'button'} />
+            </Link>
+            <SignButton role={'signup'} type={'button'} />             
           </div>
         </div>
       </div>

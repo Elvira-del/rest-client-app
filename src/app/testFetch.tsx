@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from "react";
-import { proxyFetch } from "@/utils/proxyFetch";
+import { useState } from 'react';
+import { proxyFetch } from '@/utils/proxyFetch';
 
 export default function TestRequest() {
   const [getResponse, setGetResponse] = useState<string>('');
@@ -9,9 +9,12 @@ export default function TestRequest() {
 
   const handleGet = async () => {
     try {
-      const response = await proxyFetch("https://jsonplaceholder.typicode.com/todos/1", {
-        method: "GET",
-      });
+      const response = await proxyFetch(
+        'https://jsonplaceholder.typicode.com/todos/1',
+        {
+          method: 'GET',
+        }
+      );
       setGetResponse(JSON.stringify(response, null, 2));
     } catch {
       setGetResponse('Error');
@@ -20,15 +23,18 @@ export default function TestRequest() {
 
   const handlePost = async () => {
     try {
-      const response = await proxyFetch("https://jsonplaceholder.typicode.com/posts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: {
-          title: 'foo',
-          body: 'bar',
-          userId: 1,
-        },
-      });
+      const response = await proxyFetch(
+        'https://jsonplaceholder.typicode.com/posts',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: {
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+          },
+        }
+      );
       setPostResponse(JSON.stringify(response, null, 2));
     } catch {
       setPostResponse('Error');
@@ -38,8 +44,9 @@ export default function TestRequest() {
   return (
     <div>
       <h1>Test ProxyFetch</h1>
-      
-      <button onClick={handleGet}>Send GET</button><br/>
+
+      <button onClick={handleGet}>Send GET</button>
+      <br />
       <button onClick={handlePost}>Send POST</button>
 
       {getResponse && (

@@ -3,6 +3,20 @@
     "signin": "Sign In",
     "signup": "Sign Up"
   },
+  "Auth": {
+    "signinTitle": "Sign In",
+    "signinSubtitle": "Enter your credentials to access your account",
+    "email": "Email",
+    "password": "Password",
+    "signin": "Submit",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Sign Up",
+    "minPassword": "Minimum 8 characters with letter, digit and special character",
+    "errors": {
+      "passWrong": "Password must be at least 8 characters with letter digit and spectial character",
+      "invalidEmail": "Invalid email"
+    }
+  },
   "Main": {
     "hero": {
       "title": "REST Client - API Testing Made Simple",
