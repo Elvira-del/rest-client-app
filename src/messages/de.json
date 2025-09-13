@@ -15,8 +15,8 @@
     "errors": {
       "passWrong": "Das Passwort muss mindestens 8 Zeichen enthalten, einschließlich des Buchstaben einer Ziffer und eines Sonderzeichens",
       "invalidEmail": "Falsche E-Mail-Adresse"
-}
-},
+    }
+  },
   "Main": {
     "hero": {
       "title": "REST Client - API-Tests leicht gemacht",
