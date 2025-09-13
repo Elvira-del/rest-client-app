@@ -4,13 +4,17 @@
     "signup": "Sign Up"
   },
   "Auth": {
+    "signUpTitle": "Sign Up",
+    "signUpSubtitle": "Create a new account to get started",
     "signinTitle": "Sign In",
     "signinSubtitle": "Enter your credentials to access your account",
     "email": "Email",
     "password": "Password",
     "signin": "Submit",
     "noAccount": "Don't have an account?",
+    "haveAccount": "Do you already have an account?",
     "createAccount": "Sign Up",
+    "signinAccount": "Sign In",
     "minPassword": "Minimum 8 characters with letter, digit and special character",
     "errors": {
       "passWrong": "Password must be at least 8 characters with letter digit and spectial character",

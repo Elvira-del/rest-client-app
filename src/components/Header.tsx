@@ -51,7 +51,9 @@ export const Header = () => {
             <Link href="/signin">
               <SignButton role={'signin'} type={'button'} />
             </Link>
-            <SignButton role={'signup'} type={'button'} />             
+            <Link href="/signup">
+              <SignButton role={'signup'} type={'button'} />
+            </Link>
           </div>
         </div>
       </div>
