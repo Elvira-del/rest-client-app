@@ -8,16 +8,18 @@ import {
 } from './ui/card';
 import { Button } from './ui/button';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 export const MainAfterAuth = () => {
+  const t = useTranslations('MainAfterAuth');
+  const username = 'example';
+
   return (
     <section>
       <div className="container max-w-4xl mx-auto space-y-6">
         <div className="text-center space-y-2">
-          <h1 className="text-3xl">Welcome back, UserName!</h1>
-          <p className="text-muted-foreground">
-            Choose an option to get started
-          </p>
+          <h1 className="text-3xl">{t('title', { username })}</h1>
+          <p className="text-muted-foreground">{t('description')}</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -25,15 +27,13 @@ export const MainAfterAuth = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
                 <Send className="h-6 w-6 text-primary" />
-                REST Client
+                {t('rest-client.title')}
               </CardTitle>
-              <CardDescription>
-                Make HTTP requests and test APIs
-              </CardDescription>
+              <CardDescription>{t('rest-client.description')}</CardDescription>
             </CardHeader>
             <CardContent>
               <Link href={'/rest-client'}>
-                <Button className="w-full">Open REST Client</Button>
+                <Button className="w-full">{t('rest-client.button')}</Button>
               </Link>
             </CardContent>
           </Card>
@@ -42,14 +42,14 @@ export const MainAfterAuth = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
                 <History className="h-6 w-6 text-primary" />
-                History
+                {t('history.title')}
               </CardTitle>
-              <CardDescription>View your request history</CardDescription>
+              <CardDescription>{t('history.description')}</CardDescription>
             </CardHeader>
             <CardContent>
               <Link href={'/history'}>
                 <Button className="w-full" variant="outline">
-                  View History
+                  {t('history.button')}
                 </Button>
               </Link>
             </CardContent>
@@ -59,16 +59,14 @@ export const MainAfterAuth = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
                 <Settings className="h-6 w-6 text-primary" />
-                Variables
+                {t('variables.title')}
               </CardTitle>
-              <CardDescription>
-                Manage your environment variables
-              </CardDescription>
+              <CardDescription>{t('variables.description')}</CardDescription>
             </CardHeader>
             <CardContent>
               <Link href={'/variables'}>
                 <Button className="w-full" variant="outline">
-                  Manage Variables
+                  {t('variables.button')}
                 </Button>
               </Link>
             </CardContent>

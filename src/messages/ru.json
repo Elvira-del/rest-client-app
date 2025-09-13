@@ -21,7 +21,7 @@
       "invalidEmail": "Неверный адрес электронной почты"
     }
   },
-  "Main": {
+  "MainBeforeAuth": {
     "hero": {
       "title": "REST Client - Простое тестирование API",
       "description": "Легковесный и мощный инструмент для тестирования и отладки REST API"
@@ -131,6 +131,25 @@
           "third": "Проектирование API"
         }
       }
+    }
+  },
+  "MainAfterAuth": {
+    "title": "С возвращением, {username}!",
+    "description": "Выберите действие, чтобы начать работу",
+    "rest-client": {
+      "title": "REST Client",
+      "description": "Выполняйте HTTP-запросы и тестируйте API",
+      "button": "Открыть REST Client"
+    },
+    "history": {
+      "title": "История",
+      "description": "Просматривайте историю ваших запросов",
+      "button": "Посмотреть историю"
+    },
+    "variables": {
+      "title": "Переменные",
+      "description": "Управляйте переменными окружения",
+      "button": "Управлять переменными"
     }
   }
 }

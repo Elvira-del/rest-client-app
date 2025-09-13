@@ -21,7 +21,7 @@
       "invalidEmail": "Falsche E-Mail-Adresse"
     }
   },
-  "Main": {
+  "MainBeforeAuth": {
     "hero": {
       "title": "REST Client - API-Tests leicht gemacht",
       "description": "Ein leichtes, leistungsstarkes Tool zum Testen und Debuggen von REST-APIs"
@@ -131,6 +131,25 @@
           "third": "API-Design"
         }
       }
+    }
+  },
+  "MainAfterAuth": {
+    "title": "Willkommen zurück, {username}!",
+    "description": "Wählen Sie eine Option, um zu starten",
+    "rest-client": {
+      "title": "REST Client",
+      "description": "Führen Sie HTTP-Anfragen aus und testen Sie APIs",
+      "button": "REST Client öffnen"
+    },
+    "history": {
+      "title": "Verlauf",
+      "description": "Sehen Sie sich Ihren Anfrageverlauf an",
+      "button": "Verlauf anzeigen"
+    },
+    "variables": {
+      "title": "Variablen",
+      "description": "Verwalten Sie Ihre Umgebungsvariablen",
+      "button": "Variablen verwalten"
     }
   }
 }
