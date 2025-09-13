@@ -6,12 +6,12 @@ export async function proxyFetch(
     body?: Record<string, string | number>;
   } = {}
 ) {
-  const response = await fetch("/api/proxy", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+  const response = await fetch('/api/proxy', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       targetUrl,
-      method: options.method || "GET",
+      method: options.method || 'GET',
       headers: options.headers,
       body: options.body,
     }),

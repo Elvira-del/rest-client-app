@@ -5,5 +5,19 @@
   },
   "HomePage": {
     "title": "Hauptseite"
+  },
+  "Auth": {
+    "signinTitle": "Anmelden",
+    "signinSubtitle": "Geben Sie Ihre Zugangsdaten ein",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "signin": "Fortfahren",
+    "noAccount": "Noch kein Konto?",
+    "createAccount": "Erstellen",
+    "minPassword": "Mindestens 8 Zeichen mit Buchstaben, Ziffern und Sonderzeichen",
+    "errors": {
+      "passWrong": "Das Passwort muss mindestens 8 Zeichen enthalten, einschließlich des Buchstaben einer Ziffer und eines Sonderzeichens",
+      "invalidEmail": "Falsche E-Mail-Adresse"
+    }
   }
 }

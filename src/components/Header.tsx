@@ -49,9 +49,11 @@ export const Header = () => {
           </div>
 
           <div className="flex gap-2">
-            <Button variant="outline" type="button">
-              {t('signin')}
-            </Button>
+            <Link href="/signin">
+              <Button variant="outline" type="button">
+                {t('signin')}
+              </Button>
+            </Link>
             <Button type="button">{t('signup')}</Button>
           </div>
         </div>
