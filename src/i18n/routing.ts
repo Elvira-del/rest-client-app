@@ -25,6 +25,16 @@ export const routing = defineRouting({
       ru: '/rest-client/[method]',
       de: '/rest-client/[method]',
     },
+    '/rest-client/[method]/[url]': {
+      en: '/rest-client/[method]/[url]',
+      ru: '/rest-client/[method]/[url]',
+      de: '/rest-client/[method]/[url]',
+    },
+    '/rest-client/[method]/[[...url]]': {
+      en: '/rest-client/[method]/[[...url]]',
+      ru: '/rest-client/[method]/[[...url]]',
+      de: '/rest-client/[method]/[[...url]]',
+    },
     '/history': {
       en: '/history',
       ru: '/history',
