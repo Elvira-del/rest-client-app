@@ -20,6 +20,11 @@ export const routing = defineRouting({
       ru: '/rest-client',
       de: '/rest-client',
     },
+    '/rest-client/[method]': {
+      en: '/rest-client/[method]',
+      ru: '/rest-client/[method]',
+      de: '/rest-client/[method]',
+    },
     '/history': {
       en: '/history',
       ru: '/history',
