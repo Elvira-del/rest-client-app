@@ -1,4 +1,4 @@
-import { MethodSelector } from '@/components/MethodSelector';
+import { MethodEndpointBar } from '@/components/MethodEndpointBar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -24,7 +24,7 @@ export default function RestClientPage() {
             <CardTitle>Request</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <MethodSelector />
+            <MethodEndpointBar />
             <Tabs className="w-full" defaultValue="headers">
               <TabsList>
                 <TabsTrigger value="headers">Headers</TabsTrigger>

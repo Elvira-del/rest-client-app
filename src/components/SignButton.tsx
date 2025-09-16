@@ -2,8 +2,8 @@ import { useTranslations } from 'next-intl';
 import { Button } from './ui/button';
 
 type SignButtonProps = {
-  role: 'signin' | 'signup' | 'signout'| 'backhome';
-  type: 'button' | 'submit' | 'reset' ;
+  role: 'signin' | 'signup' | 'signout' | 'backhome';
+  type: 'button' | 'submit' | 'reset';
 };
 
 export const SignButton = ({ role, type }: SignButtonProps) => {
