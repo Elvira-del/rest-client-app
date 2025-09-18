@@ -1,43 +1,26 @@
 'use client';
 
-import { useState } from 'react';
-import type { HeaderRow } from '@/types/types';
-import { v4 as uuidv4 } from 'uuid';
 import { Plus, Trash2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
+import { useRestClientStore } from '@/store/useRestClientStore';
+
+// TODO - update store in Zustand
 
 export const HeadersEditor = () => {
-  const [headers, setHeaders] = useState<HeaderRow[]>([
-    { id: '1', key: '', value: '' },
-  ]);
+  const headers = useRestClientStore((state) => state.headers);
+  const addHeader = useRestClientStore((state) => state.addHeader);
+  const removeHeader = useRestClientStore((state) => state.removeHeader);
+  const updateHeader = useRestClientStore((state) => state.updateHeader);
 
-  const handleAddHeader = () => {
-    setHeaders((prev) => [...prev, { id: uuidv4(), key: '', value: '' }]);
-  };
-
-  const handleRemoveHeader = (id: string) => {
-    setHeaders(headers.filter((header) => header.id !== id));
-  };
-
-  const handleUpdateHeader = (
-    id: string,
-    field: 'key' | 'value',
-    value: string
-  ) => {
-    setHeaders(
-      headers.map((header) =>
-        header.id === id ? { ...header, [field]: value } : header
-      )
-    );
-  };
+  console.info('HEADERS:', headers);
 
   return (
     <>
       <div className="flex items-center justify-between">
         <Label>Headers</Label>
-        <Button variant="outline" size="sm" onClick={handleAddHeader}>
+        <Button variant="outline" size="sm" onClick={addHeader}>
           <Plus className="h-4 w-4 mr-2" />
           Add Header
         </Button>
@@ -50,7 +33,7 @@ export const HeadersEditor = () => {
               placeholder="Key"
               value={header.key}
               onChange={(event) =>
-                handleUpdateHeader(header.id, 'key', event.target.value)
+                updateHeader(header.id, { key: event.target.value })
               }
             />
             <Input
@@ -58,13 +41,13 @@ export const HeadersEditor = () => {
               placeholder="Value"
               value={header.value}
               onChange={(event) =>
-                handleUpdateHeader(header.id, 'value', event.target.value)
+                updateHeader(header.id, { value: event.target.value })
               }
             />
             <Button
               variant="outline"
               size="sm"
-              onClick={() => handleRemoveHeader(header.id)}
+              onClick={() => removeHeader(header.id)}
               disabled={headers.length === 1}
             >
               <Trash2 className="h-4 w-4" />

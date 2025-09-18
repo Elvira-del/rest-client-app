@@ -12,3 +12,10 @@ export type HeaderRow = {
   key: string;
   value: string;
 };
+
+export type RestDraft = {
+  method: HttpMethod;
+  endpoint: string;
+  headers: HeaderRow[];
+  body: string;
+};
