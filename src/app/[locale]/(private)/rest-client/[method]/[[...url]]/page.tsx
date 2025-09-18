@@ -1,12 +1,14 @@
+import { HeadersEditor } from '@/components/HeadersEditor';
 import { MethodEndpointBar } from '@/components/MethodEndpointBar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Textarea } from '@/components/ui/textarea';
-import { Copy, Plus, Trash2 } from 'lucide-react';
+import { Copy } from 'lucide-react';
+
+// TODO - {method, endpoint, headers: {key, value}, body}
 
 export default function RestClientPage() {
   return (
@@ -32,22 +34,7 @@ export default function RestClientPage() {
                 <TabsTrigger value="code">Generated Code</TabsTrigger>
               </TabsList>
               <TabsContent className="space-y-4" value="headers">
-                <div className="flex items-center justify-between">
-                  <Label>Headers</Label>
-                  <Button variant="outline" size="sm">
-                    <Plus className="h-4 w-4 mr-2" />
-                    Add Header
-                  </Button>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex gap-2 items-center">
-                    <Input className="flex-1" placeholder="key" />
-                    <Input className="flex-1" placeholder="value" />
-                    <Button variant="outline" size="sm">
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
+                <HeadersEditor />
               </TabsContent>
 
               <TabsContent value="body">

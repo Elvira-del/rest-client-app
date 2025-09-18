@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useState, type ChangeEvent } from 'react';
+import { type ChangeEvent } from 'react';
 import { useRouter } from '@/i18n/navigation';
-import { useParams } from 'next/navigation';
 import type { HttpMethod } from '@/types/types';
 import { Input } from './ui/input';
 import {
@@ -14,7 +13,8 @@ import {
 } from './ui/select';
 import { Button } from './ui/button';
 import { Send } from 'lucide-react';
-import { fromBase64Url, toBase64Url } from '@/lib/base64';
+import { headersToQuery, toBase64Url } from '@/lib/base64';
+import { useRestClientStore } from '@/store/useRestClientStore';
 
 const METHODS: HttpMethod[] = [
   'GET',
@@ -26,66 +26,44 @@ const METHODS: HttpMethod[] = [
   'OPTIONS',
 ];
 
-function isHttpMethod(value: unknown): value is HttpMethod {
-  return (
-    typeof value === 'string' &&
-    METHODS.includes(value.toUpperCase() as HttpMethod)
-  );
-}
-
 export const MethodEndpointBar = () => {
   const router = useRouter();
-  const params = useParams<{ method?: string; url?: string[] }>();
 
-  const [method, setMethod] = useState<HttpMethod>('GET');
-  const [endpoint, setEndpoint] = useState('');
+  const method = useRestClientStore((state) => state.method);
+  const endpoint = useRestClientStore((state) => state.endpoint);
+  const setMethod = useRestClientStore((state) => state.setMethod);
+  const setEndpoint = useRestClientStore((state) => state.setEndpoint);
 
-  useEffect(() => {
-    const urlMethod = params.method?.toUpperCase();
-    if (isHttpMethod(urlMethod)) {
-      setMethod(urlMethod);
-    } else {
-      setMethod('GET');
-    }
-
-    const urlEndpoint = params.url?.[0];
-    if (urlEndpoint) {
-      try {
-        setEndpoint(fromBase64Url(urlEndpoint));
-      } catch {
-        setEndpoint('');
-      }
-    } else {
-      setEndpoint('');
-    }
-  }, [params.method, params.url]);
-
-  const handleChangeMethod = (value: HttpMethod) => {
-    const method = value.toUpperCase();
-    if (!isHttpMethod(method)) return;
+  const handleChangeMethod = (value: string) => {
+    const method = value.toUpperCase() as HttpMethod;
+    if (!METHODS.includes(method)) return;
     setMethod(method);
-
-    const existEndpoint = params.url;
-    router.replace({
-      pathname: '/rest-client/[method]/[[...url]]',
-      params: { method, url: existEndpoint },
-    });
   };
 
   const handleChangeEndpoint = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
-    setEndpoint(value);
+    const endpointTrimmed = value.trim();
+    setEndpoint(endpointTrimmed);
   };
 
-  const handleSubmitEndpoint = () => {
-    const endpointTrimmed = endpoint.trim();
-    const encodedEndpoint = toBase64Url(endpointTrimmed);
-
+  const handleSubmitURL = () => {
+    // TODO - getData from store
+    // encode url
+    // const encodedURL = encode(data)
+    // router.replace(url)
+    // send request
+    const headers = useRestClientStore.getState().headers;
+    const encodedUrl = toBase64Url(endpoint);
+    const query = headersToQuery(headers);
     router.replace({
       pathname: '/rest-client/[method]/[[...url]]',
-      params: { method, url: [encodedEndpoint] },
+      params: { method, url: [encodedUrl] },
+      query,
     });
   };
+
+  console.info('METHOD:', method);
+  console.info('ENDPOINT:', endpoint);
 
   return (
     <div className="flex gap-2">
@@ -106,9 +84,9 @@ export const MethodEndpointBar = () => {
         type="text"
         placeholder="https://api.example.com/users"
         value={endpoint}
-        onChange={(event) => handleChangeEndpoint(event)}
+        onChange={handleChangeEndpoint}
       />
-      <Button onClick={handleSubmitEndpoint}>
+      <Button onClick={handleSubmitURL}>
         <Send className="h-4 w-4 mr-2" />
         Send
       </Button>
