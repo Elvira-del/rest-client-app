@@ -6,7 +6,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from '@/components/ui/sonner';
 
 import '../globals.css';
 
@@ -37,7 +37,7 @@ export default async function RootLayout({
           <div id="root">{children}</div>
           <Footer />
         </NextIntlClientProvider>
-      <Toaster />
+        <Toaster expand={true} richColors closeButton />
       </body>
     </html>
   );

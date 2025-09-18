@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/select';
 import { SignButton } from './SignButton';
 import { ErrorActiveButton } from '@/components/ErrorActiveButton';
-import  TestToast  from '@/components/TestToast';
+import TestToast from '@/components/TestToast';
 
 export const Header = () => {
   const locale = useLocale();
@@ -20,15 +20,17 @@ export const Header = () => {
   const router = useRouter();
 
   const handleSwitchLang = (value: string) => {
-    router.replace(pathname as 
-      | "/" 
-      | "/signin" 
-      | "/signup" 
-      | "/rest-client" 
-      | "/rest-client/[method]/[[...url]]" 
-      | "/history" 
-      | "/variables", 
-      { locale: value });
+    router.replace(
+      pathname as
+        | '/'
+        | '/signin'
+        | '/signup'
+        | '/rest-client'
+        | '/rest-client/[method]/[[...url]]'
+        | '/history'
+        | '/variables',
+      { locale: value }
+    );
   };
 
   return (
