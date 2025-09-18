@@ -1,3 +1,4 @@
+import { BodyEditor } from '@/components/BodyEditor';
 import { HeadersEditor } from '@/components/HeadersEditor';
 import { MethodEndpointBar } from '@/components/MethodEndpointBar';
 import { Badge } from '@/components/ui/badge';
@@ -5,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Textarea } from '@/components/ui/textarea';
 import { Copy } from 'lucide-react';
 
 // TODO - {method, endpoint, headers: {key, value}, body}
@@ -38,18 +38,7 @@ export default function RestClientPage() {
               </TabsContent>
 
               <TabsContent value="body">
-                <div className="space-y-2">
-                  <Label>Body</Label>
-                  <Textarea
-                    className="min-h-[200px] font-mono"
-                    placeholder='{"key": "value"}'
-                  />
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm">
-                      Format JSON
-                    </Button>
-                  </div>
-                </div>
+                <BodyEditor />
               </TabsContent>
 
               <TabsContent value="code">
