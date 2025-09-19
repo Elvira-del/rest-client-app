@@ -13,8 +13,14 @@ import {
 } from './ui/select';
 import { Button } from './ui/button';
 import { Send } from 'lucide-react';
-import { headersToQuery, toBase64Url } from '@/lib/base64';
+import {
+  bodyToBase64Url,
+  headersToQuery,
+  methodCanHaveBody,
+  toBase64Url,
+} from '@/lib/base64';
 import { useRestClientStore } from '@/store/useRestClientStore';
+import { toast } from 'sonner';
 
 const METHODS: HttpMethod[] = [
   'GET',
@@ -54,12 +60,23 @@ export const MethodEndpointBar = () => {
     // send request
     const { method, endpoint, headers, body } = useRestClientStore.getState();
     const encodedEndpoint = toBase64Url(endpoint);
-    const encodedBody = toBase64Url(JSON.stringify(JSON.parse(body)));
+    const encodedBody = bodyToBase64Url(body, method);
     const query = headersToQuery(headers);
+
+    if (methodCanHaveBody(method) && body.trim() && !encodedBody) {
+      toast.error('Body is not valid JSON', {
+        description: 'Fix JSON to proceed.',
+      });
+      return;
+    }
+
+    const urlSegments: string[] = [];
+    if (encodedEndpoint) urlSegments.push(encodedEndpoint);
+    if (encodedBody) urlSegments.push(encodedBody);
 
     router.replace({
       pathname: '/rest-client/[method]/[[...url]]',
-      params: { method, url: [encodedEndpoint, encodedBody] },
+      params: { method, url: urlSegments },
       query,
     });
   };

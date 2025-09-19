@@ -1,4 +1,4 @@
-import type { HeaderRow } from '@/types/types';
+import type { HeaderRow, HttpMethod } from '@/types/types';
 
 export function toBase64Url(str: string) {
   const bytes = new TextEncoder().encode(str);
@@ -32,4 +32,21 @@ export function headersToQuery(
       }
     });
   return out;
+}
+
+export function methodCanHaveBody(method: HttpMethod) {
+  return !['GET', 'HEAD'].includes(method.toUpperCase());
+}
+
+export function bodyToBase64Url(body: string, method: HttpMethod) {
+  if (!methodCanHaveBody(method)) return undefined;
+  const trimmed = body.trim();
+  if (!trimmed) return undefined;
+  try {
+    const json = JSON.parse(trimmed);
+    const normalized = JSON.stringify(json);
+    return toBase64Url(normalized);
+  } catch {
+    return undefined;
+  }
 }
