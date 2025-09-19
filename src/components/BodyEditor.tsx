@@ -17,7 +17,7 @@ export const BodyEditor = () => {
 
   const handleFormatJson = () => {
     try {
-      const obj = JSON.parse(body);
+      const obj = JSON.parse(body.trim());
       setBody(JSON.stringify(obj, null, 2));
       toast.success('Body formatted');
     } catch {

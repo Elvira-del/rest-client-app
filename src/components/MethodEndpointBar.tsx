@@ -52,12 +52,14 @@ export const MethodEndpointBar = () => {
     // const encodedURL = encode(data)
     // router.replace(url)
     // send request
-    const headers = useRestClientStore.getState().headers;
-    const encodedUrl = toBase64Url(endpoint);
+    const { method, endpoint, headers, body } = useRestClientStore.getState();
+    const encodedEndpoint = toBase64Url(endpoint);
+    const encodedBody = toBase64Url(JSON.stringify(JSON.parse(body)));
     const query = headersToQuery(headers);
+
     router.replace({
       pathname: '/rest-client/[method]/[[...url]]',
-      params: { method, url: [encodedUrl] },
+      params: { method, url: [encodedEndpoint, encodedBody] },
       query,
     });
   };
