@@ -1,69 +1,51 @@
-# React + TypeScript + Vite
+# Lightweight Postman analog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight in-browser REST client: send HTTP requests, inspect responses, and keep a local history & collections.
 
-Currently, two official plugins are available:
+**Deploy:** https://rest-client-app-taupe.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **HTTP methods:** `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`
+- **Headers & body:** edit headers, raw JSON/text body, copy request/response
+- **Response viewer:** status, headers, body (raw/pretty), basic timing
+- **Request history** (local) for quick replay
+- **i18n** via `next-intl` — `en`, `de` and `ru` (`/en`, `/de`, `/ru`)
+- **Design system:** Tailwind CSS + shadcn/ui, icons via lucide-react
+- **Validation:** Zod for request payloads
+- **Proxy route** `/api/proxy` to bypass CORS (Next.js Route Handler)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> Roadmap: collections CRUD, env variables, import/export, cURL/JS codegen, JSON formatting & highlight, drafts.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+## 🧱 Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Framework:** Next.js (App Router) + TypeScript
+- **UI:** Tailwind CSS, shadcn/ui, lucide-react
+- **i18n:** next-intl
+- **Validation:** Zod
+- **Tests:** Vitest + React Testing Library
+- **Quality:** ESLint (flat) + Prettier + Husky
+- **CI/CD:** GitHub Actions • Deploy: Vercel
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+## 🚀 Quick Start
+
+```bash
+# 1) Clone
+git clone https://github.com/Elvira-del/rest-client-app.git
+cd rest-client-app
+
+# 2) Install deps
+npm ci   # or npm i
+
+# 3) Run dev server
+npm run dev
+
+# 4) Open
+# http://localhost:3000/en  or  http://localhost:3000/ru
 ```
