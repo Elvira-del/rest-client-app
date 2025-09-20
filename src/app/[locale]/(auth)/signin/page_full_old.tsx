@@ -1,10 +1,10 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SignInSchema, type SignInInput } from '@/lib/validation/auth';
 import { useForm } from 'react-hook-form';
+import { Link } from 'lucide-react';
 
 export default function SignInPage() {
   const t = useTranslations('Auth');

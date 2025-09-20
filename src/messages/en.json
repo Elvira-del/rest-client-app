@@ -11,6 +11,7 @@
     "email": "Email",
     "password": "Password",
     "signin": "Submit",
+    "signup": "Sign Up",
     "noAccount": "Don't have an account?",
     "haveAccount": "Do you already have an account?",
     "createAccount": "Sign Up",
