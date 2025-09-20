@@ -8,7 +8,7 @@ import { Trash2 } from 'lucide-react';
 type type_history_data = React.ComponentProps<typeof HistoryCard>;
 
 const history_data: type_history_data[] = [
-{
+  {
     id: '1',
     method: 'GET',
     url: 'https://swapi.dev/api/people/1/',
@@ -45,31 +45,36 @@ export default function HistoryPage() {
           <CardTitle className="text-2xl">Request History</CardTitle>
           {history_data.length ? (
             <CardDescription className="text-base mt-1">
-              {history_data.length+' requests found'}
+              {history_data.length + ' requests found'}
             </CardDescription>
-          ): <CardDescription className="text-base mt-1">
+          ) : (
+            <CardDescription className="text-base mt-1">
               Your request history will appear here
             </CardDescription>
-          }
-            </div>
-            {history_data.length > 0 && (
-              <Button variant="outline" size="sm" className="flex items-center gap-2 p-4"
-                onClick={() => {
-                  console.log('Clear history');
-                }}
-              >
-                <Trash2 className="h-4 w-4" />
-                Clear History
-              </Button>
-            )}
+          )}
+        </div>
+        {history_data.length > 0 && (
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex items-center gap-2 p-4"
+            onClick={() => {
+              console.log('Clear history');
+            }}
+          >
+            <Trash2 className="h-4 w-4" />
+            Clear History
+          </Button>
+        )}
       </div>
       {!history_data.length && (
         <div className="p-2 rounded-lg border-1">
           <p className="mx-4 text-sm text-muted-foreground">
-            No requests found. Start making requests in the REST client to see them here.
+            No requests found. Start making requests in the REST client to see
+            them here.
           </p>
         </div>
-       )}
+      )}
       {history_data && (
         <section className="flex flex-col flex-wrap gap-4">
           {history_data.map((item) => (

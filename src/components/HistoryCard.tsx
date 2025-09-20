@@ -27,7 +27,7 @@ export default function HistoryCard({
   time,
 }: RequestCardProps) {
   return (
-    <Card className='relative border shadow-sm hover:shadow-md'>
+    <Card className="relative border shadow-sm hover:shadow-md">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <div className="flex items-center text-center gap-3">
@@ -36,19 +36,19 @@ export default function HistoryCard({
               {url}
             </CardDescription>
           </div>
-            <div className="flex items-center gap-3">
-            <span className= 'text-sm bg-black text-white px-2 py-1 rounded-md'>
-                {statusText}
+          <div className="flex items-center gap-3">
+            <span className="text-sm bg-black text-white px-2 py-1 rounded-md">
+              {`${status} ${statusText}`}
             </span>
             <div className="flex gap-1 text-xs">
-                <div className="rounded-md border p-2">
-                    <div className="font-medium">{date ?? '—'}</div>
-                </div>
-                <div className="rounded-md border p-2">
-                    <div className="font-medium">{time ?? '—'}</div>
-                </div>
+              <div className="rounded-md border p-2">
+                <div className="font-medium">{date ?? '—'}</div>
+              </div>
+              <div className="rounded-md border p-2">
+                <div className="font-medium">{time ?? '—'}</div>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
       </CardHeader>
     </Card>
