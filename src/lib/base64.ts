@@ -54,10 +54,10 @@ export function bodyToBase64Url(body: string, method: HttpMethod) {
 }
 
 export function normalizeJsonOrNull(input: string): string | null {
-  const t = input.trim();
-  if (!t) return null;
+  const trimmed = input.trim();
+  if (!trimmed) return null;
   try {
-    return JSON.stringify(JSON.parse(t));
+    return JSON.stringify(JSON.parse(trimmed));
   } catch {
     return null;
   }

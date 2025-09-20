@@ -19,6 +19,9 @@ export async function POST(request: Request): Promise<Response> {
 
     return new Response(
       JSON.stringify({
+        status: apiResponse.status,
+        statusText: apiResponse.statusText,
+        headers: Object.fromEntries(apiResponse.headers.entries()),
         data: parsedData,
       }),
       {

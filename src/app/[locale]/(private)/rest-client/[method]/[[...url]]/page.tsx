@@ -1,14 +1,12 @@
 import { BodyEditor } from '@/components/BodyEditor';
 import { HeadersEditor } from '@/components/HeadersEditor';
 import { MethodEndpointBar } from '@/components/MethodEndpointBar';
-import { Badge } from '@/components/ui/badge';
+import { ResponseViewer } from '@/components/ResponseViewer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Copy } from 'lucide-react';
-
-// TODO - {method, endpoint, headers: {key, value}, body}
 
 export default function RestClientPage() {
   return (
@@ -60,43 +58,7 @@ export default function RestClientPage() {
         </Card>
 
         {/* TODO: Error Display */}
-        {/* Response Section */}
-        <Card>
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <CardTitle>Response</CardTitle>
-              <div className="flex items-center gap-2">
-                <Badge>Response status</Badge>
-                <span className="text-sm text-muted-foreground">Time ms</span>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <Tabs defaultValue="body">
-              <TabsList>
-                <TabsTrigger value="body">Body</TabsTrigger>
-                <TabsTrigger value="headers">Headers</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="body">
-                <pre className="bg-muted p-4 rounded-md text-sm overflow-x-auto max-h-96">
-                  <code>Response Body</code>
-                </pre>
-              </TabsContent>
-
-              <TabsContent value="headers">
-                <div className="space-y-2">
-                  <div className="flex gap-4 py-1">
-                    <span className="font-mono text-sm min-w-32">Key:</span>
-                    <span className="font-mono text-sm text-muted-foreground">
-                      Value
-                    </span>
-                  </div>
-                </div>
-              </TabsContent>
-            </Tabs>
-          </CardContent>
-        </Card>
+        <ResponseViewer />
       </div>
     </section>
   );

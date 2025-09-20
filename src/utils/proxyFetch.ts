@@ -21,6 +21,6 @@ export async function proxyFetch(
     throw new Error(`Error! Status: ${response.status}`);
   }
 
-  const result = await response.json(); //или тут можно .text()
-  return result.data;
+  const result = await response.json();
+  return result;
 }
