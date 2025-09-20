@@ -29,3 +29,4 @@ dist-ssr
 # Tests
 coverage/
 
+.env.local
