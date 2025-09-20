@@ -1,11 +1,17 @@
 import { create } from 'zustand';
 import { v4 as uuidv4 } from 'uuid';
-import type { HeaderRow, HttpMethod, RestDraft } from '@/types/types';
+import type {
+  HeaderRow,
+  HttpMethod,
+  RequestResponse,
+  RestDraft,
+} from '@/types/types';
 
 type RestClientState = RestDraft & {
   setMethod: (method: HttpMethod) => void;
   setEndpoint: (endpoint: string) => void;
   setBody: (body: string) => void;
+  setResponse: (response: RequestResponse) => void;
 
   addHeader: () => void;
   removeHeader: (id: string) => void;
@@ -13,6 +19,7 @@ type RestClientState = RestDraft & {
     id: string,
     patch: Partial<Pick<HeaderRow, 'key' | 'value'>>
   ) => void;
+  clearResponse: () => void;
 
   hydrate: (patch: Partial<RestDraft>) => void;
 
@@ -24,6 +31,7 @@ const initial: RestDraft = {
   endpoint: '',
   headers: [{ id: uuidv4(), key: '', value: '' }],
   body: '',
+  response: null,
 };
 
 export const useRestClientStore = create<RestClientState>()((set) => ({
@@ -32,6 +40,7 @@ export const useRestClientStore = create<RestClientState>()((set) => ({
   setMethod: (method) => set({ method }),
   setEndpoint: (endpoint) => set({ endpoint }),
   setBody: (body) => set({ body }),
+  setResponse: (response) => set({ response }),
 
   addHeader: () =>
     set((state) => ({
@@ -52,6 +61,8 @@ export const useRestClientStore = create<RestClientState>()((set) => ({
         header.id === id ? { ...header, ...patch } : header
       ),
     })),
+
+  clearResponse: () => set({ response: null }),
 
   hydrate: (patch) => set((state) => ({ ...state, ...patch })),
 

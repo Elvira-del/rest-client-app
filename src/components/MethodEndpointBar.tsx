@@ -22,6 +22,7 @@ import {
 import { useRestClientStore } from '@/store/useRestClientStore';
 import { toast } from 'sonner';
 import { sendViaProxy } from '@/lib/sendViaProxy';
+import { prettyBody } from '@/lib/format';
 
 const METHODS: HttpMethod[] = [
   'GET',
@@ -54,12 +55,8 @@ export const MethodEndpointBar = () => {
   };
 
   const handleSubmitURL = async () => {
-    // TODO - getData from store
-    // encode url
-    // const encodedURL = encode(data)
-    // router.replace(url)
-    // send request
-    const { method, endpoint, headers, body } = useRestClientStore.getState();
+    const { method, endpoint, headers, body, setResponse } =
+      useRestClientStore.getState();
 
     const encodedEndpoint = toBase64Url(endpoint);
     const encodedBody = bodyToBase64Url(body, method);
@@ -92,9 +89,14 @@ export const MethodEndpointBar = () => {
 
       const result = await promise;
 
-      // TODO
-      // setResponse({ body: result.data, time: result.time, ... })
-      console.info('RESPONSE:', result.data, 'Time:', result.time, 'ms');
+      const formattedBody = prettyBody(result.data);
+      setResponse({
+        body: formattedBody,
+        time: result.time,
+        headers: result.headers,
+        status: result.status,
+        statusText: result.statusText,
+      });
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       if (message === 'Body is not valid JSON') {

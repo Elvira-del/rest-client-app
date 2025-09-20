@@ -1,15 +1,10 @@
 import { proxyFetch } from '@/utils/proxyFetch';
-import type { SendRequestInput } from '@/types/types';
+import type { SendRequestInput, SendResult } from '@/types/types';
 import {
   headersRowsToObject,
   methodCanHaveBody,
   normalizeJsonOrNull,
 } from './base64';
-
-export type SendResult<T = unknown> = {
-  data: T;
-  time: number;
-};
 
 export async function sendViaProxy<T>(
   input: SendRequestInput
@@ -41,5 +36,5 @@ export async function sendViaProxy<T>(
   });
   const time = Math.round(performance.now() - t0);
 
-  return { data, time };
+  return { ...data, time };
 }

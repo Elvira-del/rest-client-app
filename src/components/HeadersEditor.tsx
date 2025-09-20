@@ -6,15 +6,11 @@ import { Label } from './ui/label';
 import { Input } from './ui/input';
 import { useRestClientStore } from '@/store/useRestClientStore';
 
-// TODO - update store in Zustand
-
 export const HeadersEditor = () => {
   const headers = useRestClientStore((state) => state.headers);
   const addHeader = useRestClientStore((state) => state.addHeader);
   const removeHeader = useRestClientStore((state) => state.removeHeader);
   const updateHeader = useRestClientStore((state) => state.updateHeader);
-
-  console.info('HEADERS:', headers);
 
   return (
     <>
