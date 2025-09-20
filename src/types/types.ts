@@ -19,3 +19,10 @@ export type RestDraft = {
   headers: HeaderRow[];
   body: string;
 };
+
+export type SendRequestInput = {
+  method: HttpMethod;
+  endpoint: string;
+  headers: HeaderRow[];
+  body: string;
+};

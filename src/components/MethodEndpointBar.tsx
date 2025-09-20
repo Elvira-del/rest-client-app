@@ -21,6 +21,7 @@ import {
 } from '@/lib/base64';
 import { useRestClientStore } from '@/store/useRestClientStore';
 import { toast } from 'sonner';
+import { sendViaProxy } from '@/lib/sendViaProxy';
 
 const METHODS: HttpMethod[] = [
   'GET',
@@ -52,13 +53,14 @@ export const MethodEndpointBar = () => {
     setEndpoint(endpointTrimmed);
   };
 
-  const handleSubmitURL = () => {
+  const handleSubmitURL = async () => {
     // TODO - getData from store
     // encode url
     // const encodedURL = encode(data)
     // router.replace(url)
     // send request
     const { method, endpoint, headers, body } = useRestClientStore.getState();
+
     const encodedEndpoint = toBase64Url(endpoint);
     const encodedBody = bodyToBase64Url(body, method);
     const query = headersToQuery(headers);
@@ -79,10 +81,29 @@ export const MethodEndpointBar = () => {
       params: { method, url: urlSegments },
       query,
     });
-  };
 
-  console.info('METHOD:', method);
-  console.info('ENDPOINT:', endpoint);
+    try {
+      const promise = sendViaProxy({ method, endpoint, headers, body });
+      toast.promise(promise, {
+        loading: 'Sending…',
+        success: 'Done',
+        error: 'Request failed',
+      });
+
+      const result = await promise;
+
+      // TODO
+      // setResponse({ body: result.data, time: result.time, ... })
+      console.info('RESPONSE:', result.data, 'Time:', result.time, 'ms');
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      if (message === 'Body is not valid JSON') {
+        toast.error(message, { description: 'Fix JSON to proceed.' });
+      } else {
+        toast.error('Request failed', { description: message });
+      }
+    }
+  };
 
   return (
     <div className="flex gap-2">

@@ -34,8 +34,10 @@ export function headersToQuery(
   return out;
 }
 
-export function methodCanHaveBody(method: HttpMethod) {
-  return !['GET', 'HEAD'].includes(method.toUpperCase());
+const METHODS_WITHOUT_BODY: ReadonlyArray<HttpMethod> = ['GET', 'HEAD'];
+
+export function methodCanHaveBody(method: HttpMethod): boolean {
+  return !METHODS_WITHOUT_BODY.includes(method.toUpperCase() as HttpMethod);
 }
 
 export function bodyToBase64Url(body: string, method: HttpMethod) {
@@ -49,4 +51,24 @@ export function bodyToBase64Url(body: string, method: HttpMethod) {
   } catch {
     return undefined;
   }
+}
+
+export function normalizeJsonOrNull(input: string): string | null {
+  const t = input.trim();
+  if (!t) return null;
+  try {
+    return JSON.stringify(JSON.parse(t));
+  } catch {
+    return null;
+  }
+}
+
+export function headersRowsToObject(rows: HeaderRow[]): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const row of rows) {
+    const key = row.key.trim();
+    if (!key) continue;
+    out[key] = row.value;
+  }
+  return out;
 }
