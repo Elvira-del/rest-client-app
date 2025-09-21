@@ -27,6 +27,7 @@ import {
   generateNodeJSCode,
   generatePythonCode,
 } from '@/lib/generateCode';
+import { useTranslations } from 'next-intl';
 
 const languages = [
   { value: 'curl', label: 'cURL' },
@@ -40,6 +41,8 @@ const languages = [
 ];
 
 export const GeneratedCode = () => {
+  const t = useTranslations('GeneratedCode');
+
   const method = useRestClientStore((state) => state.method);
   const endpoint = useRestClientStore((state) => state.endpoint);
   const headers = useRestClientStore((state) => state.headers);
@@ -56,7 +59,7 @@ export const GeneratedCode = () => {
   );
 
   const code = useMemo(() => {
-    if (!url) return '// Provide endpoint to generate code';
+    if (!url) return t('noUrlHint');
 
     switch (language) {
       case 'curl':
@@ -78,7 +81,7 @@ export const GeneratedCode = () => {
       default:
         return '';
     }
-  }, [language, method, url, headersObj, bodyJson]);
+  }, [t, language, method, url, headersObj, bodyJson]);
 
   const handleChangeLanguage = (value: string) => {
     setLanguage(value);
@@ -87,10 +90,10 @@ export const GeneratedCode = () => {
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <Label>Generated Code</Label>
+        <Label>{t('label')}</Label>
         <Button variant="outline" size="sm" disabled={!url}>
           <Copy className="h-4 w-4 mr-2" />
-          Copy
+          {t('copy')}
         </Button>
       </div>
       <div className="flex items-center gap-2">
@@ -101,7 +104,7 @@ export const GeneratedCode = () => {
           <SelectContent>
             {languages.map((lang) => (
               <SelectItem key={lang.value} value={lang.value}>
-                {lang.label}
+                {t(`languages.${lang.value}`)}
               </SelectItem>
             ))}
           </SelectContent>

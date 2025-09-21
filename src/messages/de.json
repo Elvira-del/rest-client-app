@@ -221,5 +221,20 @@
     "add": "Header hinzufügen",
     "keyPlaceholder": "Schlüssel",
     "valuePlaceholder": "Wert"
+  },
+  "GeneratedCode": {
+    "label": "Generierter Code",
+    "copy": "Kopieren",
+    "noUrlHint": "// Endpunkt angeben, um Code zu generieren",
+    "languages": {
+      "curl": "cURL",
+      "javascript-fetch": "JavaScript (Fetch API)",
+      "javascript-xhr": "JavaScript (XHR)",
+      "nodejs": "NodeJS",
+      "python": "Python",
+      "java": "Java",
+      "csharp": "C#",
+      "go": "Go"
+    }
   }
 }

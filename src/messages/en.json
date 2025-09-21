@@ -221,5 +221,20 @@
     "add": "Add Header",
     "keyPlaceholder": "Key",
     "valuePlaceholder": "Value"
+  },
+  "GeneratedCode": {
+    "label": "Generated Code",
+    "copy": "Copy",
+    "noUrlHint": "// Provide endpoint to generate code",
+    "languages": {
+      "curl": "cURL",
+      "javascript-fetch": "JavaScript (Fetch API)",
+      "javascript-xhr": "JavaScript (XHR)",
+      "nodejs": "NodeJS",
+      "python": "Python",
+      "java": "Java",
+      "csharp": "C#",
+      "go": "Go"
+    }
   }
 }

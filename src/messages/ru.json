@@ -221,5 +221,20 @@
     "add": "Добавить заголовок",
     "keyPlaceholder": "Ключ",
     "valuePlaceholder": "Значение"
+  },
+  "GeneratedCode": {
+    "label": "Сгенерированный код",
+    "copy": "Копировать",
+    "noUrlHint": "// Укажите endpoint, чтобы сгенерировать код",
+    "languages": {
+      "curl": "cURL",
+      "javascript-fetch": "JavaScript (Fetch API)",
+      "javascript-xhr": "JavaScript (XHR)",
+      "nodejs": "NodeJS",
+      "python": "Python",
+      "java": "Java",
+      "csharp": "C#",
+      "go": "Go"
+    }
   }
 }
