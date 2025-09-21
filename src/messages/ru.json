@@ -184,5 +184,65 @@
     "clearHistory": "Очистить историю",
     "noRequests": "Запросы не найдены. Начните делать запросы в REST клиенте, чтобы увидеть их здесь.",
     "goToClient": "Перейти в REST клиент"
+  },
+  "RestClientPage": {
+    "title": "REST-клиент",
+    "description": "Выполняйте HTTP-запросы и тестируйте API",
+    "requestCardTitle": "Запрос",
+    "tabs": {
+      "headers": "Заголовки",
+      "body": "Тело",
+      "code": "Сгенерированный код"
+    }
+  },
+  "MethodEndpointBar": {
+    "endpointPlaceholder": "https://api.example.com/users",
+    "send": "Отправить",
+    "toast": {
+      "invalidJsonTitle": "Тело — невалидный JSON",
+      "invalidJsonDesc": "Исправьте JSON, чтобы продолжить.",
+      "sending": "Отправка…",
+      "success": "Готово",
+      "error": "Запрос не удался"
+    }
+  },
+  "BodyEditor": {
+    "label": "Тело",
+    "placeholder": "{\"title\":\"fakeTitle\",\"userId\":1,\"body\":\"fakeMessage\"}",
+    "format": "Форматировать JSON",
+    "toast": {
+      "formatted": "Тело отформатировано",
+      "invalidTitle": "Тело — невалидный JSON",
+      "invalidDesc": "Пожалуйста, введите корректный JSON перед форматированием."
+    }
+  },
+  "HeadersEditor": {
+    "label": "Заголовки",
+    "add": "Добавить заголовок",
+    "keyPlaceholder": "Ключ",
+    "valuePlaceholder": "Значение"
+  },
+  "GeneratedCode": {
+    "label": "Сгенерированный код",
+    "copy": "Копировать",
+    "noUrlHint": "// Укажите endpoint, чтобы сгенерировать код",
+    "languages": {
+      "curl": "cURL",
+      "javascript-fetch": "JavaScript (Fetch API)",
+      "javascript-xhr": "JavaScript (XHR)",
+      "nodejs": "NodeJS",
+      "python": "Python",
+      "java": "Java",
+      "csharp": "C#",
+      "go": "Go"
+    }
+  },
+  "ResponseViewer": {
+    "title": "Ответ",
+    "tabs": {
+      "body": "Тело",
+      "headers": "Заголовки"
+    },
+    "noHeaders": "Заголовки ответа отсутствуют."
   }
 }

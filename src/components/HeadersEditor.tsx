@@ -5,8 +5,11 @@ import { Button } from './ui/button';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
 import { useRestClientStore } from '@/store/useRestClientStore';
+import { useTranslations } from 'next-intl';
 
 export const HeadersEditor = () => {
+  const t = useTranslations('HeadersEditor');
+
   const headers = useRestClientStore((state) => state.headers);
   const addHeader = useRestClientStore((state) => state.addHeader);
   const removeHeader = useRestClientStore((state) => state.removeHeader);
@@ -15,10 +18,10 @@ export const HeadersEditor = () => {
   return (
     <>
       <div className="flex items-center justify-between">
-        <Label>Headers</Label>
+        <Label>{t('label')}</Label>
         <Button variant="outline" size="sm" onClick={addHeader}>
           <Plus className="h-4 w-4 mr-2" />
-          Add Header
+          {t('add')}
         </Button>
       </div>
       <div className="space-y-2">
@@ -26,7 +29,7 @@ export const HeadersEditor = () => {
           <div key={header.id} className="flex gap-2 items-center">
             <Input
               className="flex-1"
-              placeholder="Key"
+              placeholder={t('keyPlaceholder')}
               value={header.key}
               onChange={(event) =>
                 updateHeader(header.id, { key: event.target.value })
@@ -34,7 +37,7 @@ export const HeadersEditor = () => {
             />
             <Input
               className="flex-1"
-              placeholder="Value"
+              placeholder={t('valuePlaceholder')}
               value={header.value}
               onChange={(event) =>
                 updateHeader(header.id, { value: event.target.value })

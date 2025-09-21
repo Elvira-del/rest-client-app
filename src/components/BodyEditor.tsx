@@ -6,8 +6,11 @@ import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { toast } from 'sonner';
+import { useTranslations } from 'next-intl';
 
 export const BodyEditor = () => {
+  const t = useTranslations('BodyEditor');
+
   const body = useRestClientStore((state) => state.body);
   const setBody = useRestClientStore((state) => state.setBody);
 
@@ -19,22 +22,20 @@ export const BodyEditor = () => {
     try {
       const obj = JSON.parse(body.trim());
       setBody(JSON.stringify(obj, null, 2));
-      toast.success('Body formatted');
+      toast.success(t('toast.formatted'));
     } catch {
-      toast.error('Body is not valid JSON', {
-        description: 'Please enter a valid JSON before formatting.',
+      toast.error(t('toast.invalidTitle'), {
+        description: t('toast.invalidDesc'),
       });
     }
   };
 
-  console.info('BODY:', body);
-
   return (
     <div className="space-y-2">
-      <Label>Body</Label>
+      <Label>{t('label')}</Label>
       <Textarea
         className="min-h-[200px] font-mono"
-        placeholder='{"title":"fakeTitle","userId":1,"body":"fakeMessage"}'
+        placeholder={t.raw('placeholder')}
         value={body}
         onChange={(event) => handleChangeBody(event)}
       />
@@ -45,7 +46,7 @@ export const BodyEditor = () => {
           disabled={!body.trim()}
           onClick={handleFormatJson}
         >
-          Format JSON
+          {t('format')}
         </Button>
       </div>
     </div>
