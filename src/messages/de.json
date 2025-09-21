@@ -176,5 +176,13 @@
     "howToUsePart3": "Zum Beispiel:",
     "howToUsePart4": "wird beim Senden von Anfragen durch den tatsächlichen Wert ersetzt.",
     "edit": "Bearbeiten"
-}
+  },
+  "HistoryPage": {
+    "title": "Anfrageverlauf",
+    "descriptionCount": " Anfragen gefunden",
+    "descriptionEmpty": "Ihr Anfrageverlauf wird hier angezeigt",
+    "clearHistory": "Verlauf löschen",
+    "noRequests": "Keine Anfragen gefunden. Beginnen Sie mit Anfragen im REST-Client, um sie hier zu sehen.",
+    "goToClient": "Zum REST-Client gehen"
+  }
 }

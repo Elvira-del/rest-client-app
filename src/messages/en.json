@@ -176,5 +176,13 @@
     "howToUsePart3": "For example:",
     "howToUsePart4": "will be replaced with the actual value when sending requests.",
     "edit": "Edit"
-}
+  },
+  "HistoryPage": {
+    "title": "Request History",
+    "descriptionCount": " requests found",
+    "descriptionEmpty": "Your request history will appear here",
+    "clearHistory": "Clear History",
+    "noRequests": "No requests found. Start making requests in the REST client to see them here.",
+    "goToClient": "Go to REST Client"
+  }
 }

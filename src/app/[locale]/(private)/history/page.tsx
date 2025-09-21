@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -38,18 +39,19 @@ const history_data: type_history_data[] = [
 ];
 
 export default function HistoryPage() {
+  const t = useTranslations('HistoryPage');
   return (
     <main className="container mx-auto px-4 py-10">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <CardTitle className="text-2xl">Request History</CardTitle>
+          <CardTitle className="text-2xl">{t('title')}</CardTitle>
           {history_data.length ? (
             <CardDescription className="text-base mt-1">
-              {history_data.length + ' requests found'}
+              {history_data.length + t('descriptionCount')}
             </CardDescription>
           ) : (
             <CardDescription className="text-base mt-1">
-              Your request history will appear here
+              {t('descriptionEmpty')}
             </CardDescription>
           )}
         </div>
@@ -63,15 +65,14 @@ export default function HistoryPage() {
             }}
           >
             <Trash2 className="h-4 w-4" />
-            Clear History
+            {t('clearHistory')}
           </Button>
         )}
       </div>
       {!history_data.length && (
         <div className="p-2 rounded-lg border-1">
           <p className="mx-4 text-sm text-muted-foreground">
-            No requests found. Start making requests in the REST client to see
-            them here.
+            {t('noRequests')}
           </p>
         </div>
       )}
@@ -84,7 +85,7 @@ export default function HistoryPage() {
       )}
       <div className="flex justify-center mt-6">
         <Link href="/rest-client">
-          <Button className="mt-2">Go to REST Client</Button>
+          <Button className="mt-2">{t('goToClient')}</Button>
         </Link>
       </div>
     </main>
