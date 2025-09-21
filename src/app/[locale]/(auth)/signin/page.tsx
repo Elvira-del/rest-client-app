@@ -48,11 +48,7 @@ export default function SignInPage() {
 
   return (
     <>
-      {error && (
-        <div className="text-center text-red-500 mb-4">
-          {error}
-        </div>
-      )}
+      {error && <div className="text-center text-red-500 mb-4">{error}</div>}
       <AuthForm
         onSubmit={onSubmit}
         texts={{
@@ -66,11 +62,7 @@ export default function SignInPage() {
           linkKey: 'createAccount',
         }}
       />
-      {loading && (
-        <div className="text-center mt-4">
-          {t('loading')}
-        </div>
-      )}
+      {loading && <div className="text-center mt-4">{t('loading')}</div>}
     </>
   );
 }
