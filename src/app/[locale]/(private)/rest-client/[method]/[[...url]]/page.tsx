@@ -1,12 +1,10 @@
 import { BodyEditor } from '@/components/BodyEditor';
+import { GeneratedCode } from '@/components/GeneratedCode';
 import { HeadersEditor } from '@/components/HeadersEditor';
 import { MethodEndpointBar } from '@/components/MethodEndpointBar';
 import { ResponseViewer } from '@/components/ResponseViewer';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Copy } from 'lucide-react';
 
 export default function RestClientPage() {
   return (
@@ -40,18 +38,7 @@ export default function RestClientPage() {
               </TabsContent>
 
               <TabsContent value="code">
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <Label>Generated Code</Label>
-                    <Button variant="outline" size="sm">
-                      <Copy className="h-4 w-4 mr-2" />
-                      Copy
-                    </Button>
-                  </div>
-                  <pre className="bg-muted p-4 rounded-md text-sm overflow-x-auto">
-                    <code></code>
-                  </pre>
-                </div>
+                <GeneratedCode />
               </TabsContent>
             </Tabs>
           </CardContent>

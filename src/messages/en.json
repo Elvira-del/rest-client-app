@@ -163,7 +163,7 @@
     "subtitlePart2": "Use variables in URLs and headers with syntax",
     "addVariable": "Add a variable",
     "key": "Key",
-    "value": "Value", 
+    "value": "Value",
     "description": "Description",
     "keyPlaceholder": "API_BASE_URL",
     "valuePlaceholder": "http://api.example.com",
