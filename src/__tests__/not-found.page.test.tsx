@@ -26,7 +26,9 @@ describe('NotFound page', () => {
     const ui = await NotFound();
     render(ui);
     expect(screen.getByText(/404 - page not found/i)).toBeInTheDocument();
-    expect(screen.getByText(/the page you’re looking for doesn’t exist\./i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/the page you’re looking for doesn’t exist\./i)
+    ).toBeInTheDocument();
   });
 
   test('renders link button to home', async () => {

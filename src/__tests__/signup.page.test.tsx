@@ -34,11 +34,12 @@ vi.mock('@hookform/resolvers/zod', () => ({
   zodResolver: () => () => ({ values: {}, errors: {} }),
 }));
 
-
 describe('SignUpPage', () => {
   test('renders title, subtitle, labels and submit button', () => {
     render(<SignUpPage />);
-    expect(screen.getByRole('heading', { name: /sign up/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: /sign up/i })
+    ).toBeInTheDocument();
     expect(
       screen.getByText(/create a new account to get started/i)
     ).toBeInTheDocument();

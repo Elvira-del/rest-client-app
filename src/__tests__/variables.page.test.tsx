@@ -34,11 +34,15 @@ vi.mock('next-intl', () => ({
 describe('VariablesPage', () => {
   test('render title and inputs', () => {
     render(<VariablesPage />);
-    expect(screen.getByRole('heading', { name: /variables/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: /variables/i })
+    ).toBeInTheDocument();
     expect(screen.getByText(/no variables yet/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/enter key/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/enter value/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/enter description/i)).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(/enter description/i)
+    ).toBeInTheDocument();
   });
 
   test('button unabled disabled', async () => {
@@ -47,7 +51,6 @@ describe('VariablesPage', () => {
     const keyInput = screen.getByLabelText(/key/i) as HTMLInputElement;
     const valueInput = screen.getByLabelText(/value/i) as HTMLInputElement;
     const addBtn = screen.getByRole('button', { name: /add variable/i });
-
 
     expect(addBtn).toBeDisabled();
 
@@ -90,7 +93,6 @@ describe('VariablesPage', () => {
     const valueInput = screen.getByLabelText(/value/i) as HTMLInputElement;
     const addBtn = screen.getByRole('button', { name: /add variable/i });
 
-
     await user.type(keyInput, 'A');
     await user.type(valueInput, '1');
     await user.click(addBtn);
@@ -99,8 +101,9 @@ describe('VariablesPage', () => {
     await user.type(valueInput, '2');
     await user.click(addBtn);
 
-
-    expect(screen.getByText(/your variables/i)).toHaveTextContent('Your variables (2)');
+    expect(screen.getByText(/your variables/i)).toHaveTextContent(
+      'Your variables (2)'
+    );
   });
 
   test('edit variables', async () => {
@@ -122,7 +125,6 @@ describe('VariablesPage', () => {
     expect(keyInput).toHaveValue('A');
     expect(valueInput).toHaveValue('1');
     expect(descInput).toHaveValue('test');
-
 
     expect(screen.queryByText('{{A}}')).not.toBeInTheDocument();
   });

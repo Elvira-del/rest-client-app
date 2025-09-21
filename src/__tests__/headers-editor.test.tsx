@@ -5,7 +5,6 @@ import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { HeadersEditor } from '@/components/HeadersEditor';
 
-
 describe('HeadersEditor', () => {
   test('renders initial row and delete is disabled when only one', () => {
     render(<HeadersEditor />);
@@ -29,8 +28,12 @@ describe('HeadersEditor', () => {
   test('updates key and value inputs via store', async () => {
     const user = userEvent.setup();
     render(<HeadersEditor />);
-    const [keyInput] = screen.getAllByPlaceholderText('Key') as HTMLInputElement[];
-    const [valueInput] = screen.getAllByPlaceholderText('Value') as HTMLInputElement[];
+    const [keyInput] = screen.getAllByPlaceholderText(
+      'Key'
+    ) as HTMLInputElement[];
+    const [valueInput] = screen.getAllByPlaceholderText(
+      'Value'
+    ) as HTMLInputElement[];
     await user.type(keyInput, 'Content-Type');
     await user.type(valueInput, 'application/json');
     expect(keyInput).toHaveValue('Content-Type');
