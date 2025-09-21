@@ -1,7 +1,8 @@
 {
   "SignButton": {
     "signin": "Sign In",
-    "signup": "Sign Up"
+    "signup": "Sign Up",
+    "signout": "Sign Out"
   },
   "Auth": {
     "signUpTitle": "Sign Up",
@@ -10,7 +11,9 @@
     "signinSubtitle": "Enter your credentials to access your account",
     "email": "Email",
     "password": "Password",
+    "loading": "Loading...",
     "signin": "Submit",
+    "signup": "Sign Up",
     "noAccount": "Don't have an account?",
     "haveAccount": "Do you already have an account?",
     "createAccount": "Sign Up",
@@ -18,7 +21,8 @@
     "minPassword": "Minimum 8 characters with letter, digit and special character",
     "errors": {
       "passWrong": "Password must be at least 8 characters with letter digit and spectial character",
-      "invalidEmail": "Invalid email"
+      "invalidEmail": "Invalid email",
+      "signInFailed": "Sign in failled"
     }
   },
   "MainBeforeAuth": {
@@ -184,5 +188,65 @@
     "clearHistory": "Clear History",
     "noRequests": "No requests found. Start making requests in the REST client to see them here.",
     "goToClient": "Go to REST Client"
+  },
+  "RestClientPage": {
+    "title": "REST Client",
+    "description": "Make HTTP requests and test APIs",
+    "requestCardTitle": "Request",
+    "tabs": {
+      "headers": "Headers",
+      "body": "Body",
+      "code": "Generated Code"
+    }
+  },
+  "MethodEndpointBar": {
+    "endpointPlaceholder": "https://api.example.com/users",
+    "send": "Send",
+    "toast": {
+      "invalidJsonTitle": "Body is not valid JSON",
+      "invalidJsonDesc": "Fix JSON to proceed.",
+      "sending": "Sending…",
+      "success": "Done",
+      "error": "Request failed"
+    }
+  },
+  "BodyEditor": {
+    "label": "Body",
+    "placeholder": "{\"title\":\"fakeTitle\",\"userId\":1,\"body\":\"fakeMessage\"}",
+    "format": "Format JSON",
+    "toast": {
+      "formatted": "Body formatted",
+      "invalidTitle": "Body is not valid JSON",
+      "invalidDesc": "Please enter a valid JSON before formatting."
+    }
+  },
+  "HeadersEditor": {
+    "label": "Headers",
+    "add": "Add Header",
+    "keyPlaceholder": "Key",
+    "valuePlaceholder": "Value"
+  },
+  "GeneratedCode": {
+    "label": "Generated Code",
+    "copy": "Copy",
+    "noUrlHint": "// Provide endpoint to generate code",
+    "languages": {
+      "curl": "cURL",
+      "javascript-fetch": "JavaScript (Fetch API)",
+      "javascript-xhr": "JavaScript (XHR)",
+      "nodejs": "NodeJS",
+      "python": "Python",
+      "java": "Java",
+      "csharp": "C#",
+      "go": "Go"
+    }
+  },
+  "ResponseViewer": {
+    "title": "Response",
+    "tabs": {
+      "body": "Body",
+      "headers": "Headers"
+    },
+    "noHeaders": "No response headers."
   }
 }

@@ -23,6 +23,7 @@ import { useRestClientStore } from '@/store/useRestClientStore';
 import { toast } from 'sonner';
 import { sendViaProxy } from '@/lib/sendViaProxy';
 import { prettyBody } from '@/lib/format';
+import { useTranslations } from 'next-intl';
 
 const METHODS: HttpMethod[] = [
   'GET',
@@ -35,6 +36,7 @@ const METHODS: HttpMethod[] = [
 ];
 
 export const MethodEndpointBar = () => {
+  const t = useTranslations('MethodEndpointBar');
   const router = useRouter();
 
   const method = useRestClientStore((state) => state.method);
@@ -63,8 +65,8 @@ export const MethodEndpointBar = () => {
     const query = headersToQuery(headers);
 
     if (methodCanHaveBody(method) && body.trim() && !encodedBody) {
-      toast.error('Body is not valid JSON', {
-        description: 'Fix JSON to proceed.',
+      toast.error(t('toast.invalidJsonTitle'), {
+        description: t('toast.invalidJsonDesc'),
       });
       return;
     }
@@ -82,9 +84,9 @@ export const MethodEndpointBar = () => {
     try {
       const promise = sendViaProxy({ method, endpoint, headers, body });
       toast.promise(promise, {
-        loading: 'Sending…',
-        success: 'Done',
-        error: 'Request failed',
+        loading: t('toast.sending'),
+        success: t('toast.success'),
+        error: t('toast.error'),
       });
 
       const result = await promise;
@@ -99,8 +101,8 @@ export const MethodEndpointBar = () => {
       });
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      if (message === 'Body is not valid JSON') {
-        toast.error(message, { description: 'Fix JSON to proceed.' });
+      if (message === t('toast.invalidJsonTitle')) {
+        toast.error(message, { description: t('toast.invalidJsonDesc') });
       } else {
         toast.error('Request failed', { description: message });
       }
@@ -124,13 +126,13 @@ export const MethodEndpointBar = () => {
       <Input
         className="flex-1"
         type="text"
-        placeholder="https://api.example.com/users"
+        placeholder={t('endpointPlaceholder')}
         value={endpoint}
         onChange={handleChangeEndpoint}
       />
       <Button onClick={handleSubmitURL}>
         <Send className="h-4 w-4 mr-2" />
-        Send
+        {t('send')}
       </Button>
     </div>
   );
