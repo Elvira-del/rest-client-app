@@ -35,7 +35,7 @@ export const BodyEditor = () => {
       <Label>{t('label')}</Label>
       <Textarea
         className="min-h-[200px] font-mono"
-        placeholder={t('placeholder')}
+        placeholder={t.raw('placeholder')}
         value={body}
         onChange={(event) => handleChangeBody(event)}
       />

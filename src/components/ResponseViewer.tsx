@@ -21,7 +21,7 @@ export const ResponseViewer = () => {
           <div className="flex items-center gap-2">
             <Badge>
               {response?.status !== undefined
-                ? `${response?.status}${response?.statusText}`
+                ? `${response?.status} ${response?.statusText}`
                 : '-'}
             </Badge>
             <span className="text-sm text-muted-foreground">
