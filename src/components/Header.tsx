@@ -13,6 +13,9 @@ import {
 import { SignButton } from './SignButton';
 import { ErrorActiveButton } from '@/components/ErrorActiveButton';
 import TestToast from '@/components/TestToast';
+import { auth } from '@/lib/firebase/firebase';
+import { signOut } from 'firebase/auth';
+import { useAuth } from '@/lib/hooks/useAith';
 import { useTransition } from 'react';
 import { useParams } from 'next/navigation';
 
@@ -30,6 +33,7 @@ export const Header = () => {
   const params = useParams();
   const locale = useLocale();
   const [isPending, startTransition] = useTransition();
+  const { user, loading } = useAuth();
 
   const handleSwitchLang = (value: string) => {
     startTransition(() => {
@@ -51,6 +55,15 @@ export const Header = () => {
       }
       router.replace(pathname as StaticPathname, { locale: value });
     });
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      router.push('/signin');
+    } catch (error) {
+      console.error('Sign-out error:', error);
+    }
   };
 
   return (
@@ -84,12 +97,23 @@ export const Header = () => {
           </div>
 
           <div className="flex gap-2">
-            <Link href="/signin">
-              <SignButton role={'signin'} type={'button'} />
-            </Link>
-            <Link href="/signup">
-              <SignButton role={'signup'} type={'button'} />
-            </Link>
+            {!loading && !user && (
+              <>
+                <Link href="/signin">
+                  <SignButton role={'signin'} type={'button'} />
+                </Link>
+                <Link href="/signup">
+                  <SignButton role={'signup'} type={'button'} />
+                </Link>
+              </>
+            )}
+            {!loading && user && (
+              <SignButton
+                role={'signout'}
+                type={'button'}
+                onClick={handleSignOut}
+              />
+            )}
           </div>
         </div>
       </div>

@@ -31,3 +31,8 @@ coverage/
 
 .vercel
 .vscode
+
+.env
+.env.example
+.env.local
+.env.staging.env.local
