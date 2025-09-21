@@ -43,7 +43,7 @@
     "./dist/types/**/*.ts",
     "./next-env.d.ts",
     ".next/types/**/*.ts",
-    "middleware.ts"
+    "src/middleware.ts"
   ],
   "exclude": ["./node_modules"]
 }
