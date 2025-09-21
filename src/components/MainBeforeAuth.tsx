@@ -19,42 +19,46 @@ export const MainBeforeAuth = () => {
   const t = useTranslations('MainBeforeAuth');
 
   return (
-    <div className="container">
+    <>
       <section>
-        <div className="text-center space-y-6 py-12">
-          <h1 className="text-4xl lg:text-6xl">{t('hero.title')}</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t('hero.description')}
-          </p>
-          <div className="flex justify-center gap-4 pt-6">
-            <Link href={'/signin'}>
-              <SignButton role={'signin'} type={'button'} />
-            </Link>
-            <Link href={'/signup'}>
-              <SignButton role={'signup'} type={'button'} />
-            </Link>
+        <div className="container max-w-6xl mx-auto">
+          <div className="text-center space-y-6 py-12">
+            <h1 className="text-4xl lg:text-6xl">{t('hero.title')}</h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              {t('hero.description')}
+            </p>
+            <div className="flex justify-center gap-4 pt-6">
+              <Link href={'/signin'}>
+                <SignButton role={'signin'} type={'button'} />
+              </Link>
+              <Link href={'/signup'}>
+                <SignButton role={'signup'} type={'button'} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       <section>
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Code className="h-6 w-6 text-primary" />
-              <h2>{t('about.subtitle')}</h2>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground leading-relaxed">
-              {t('about.content')}
-            </p>
-          </CardContent>
-        </Card>
+        <div className="container max-w-6xl mx-auto">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Code className="h-6 w-6 text-primary" />
+                <h2>{t('about.subtitle')}</h2>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground leading-relaxed">
+                {t('about.content')}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
       </section>
 
       <section>
-        <div className="space-y-6">
+        <div className="container max-w-6xl mx-auto">
           <h2 className="text-2xl text-center">{t('features.subtitle')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card>
@@ -145,7 +149,7 @@ export const MainBeforeAuth = () => {
       </section>
 
       <section>
-        <div className="space-y-6">
+        <div className="container max-w-6xl mx-auto">
           <h2 className="text-2xl text-center">{t('development.subtitle')}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
@@ -308,6 +312,6 @@ export const MainBeforeAuth = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };

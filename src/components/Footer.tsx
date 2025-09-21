@@ -18,7 +18,7 @@ const COURSE = {
 export const Footer = () => {
   return (
     <footer className="border-t bg-background mt-auto">
-      <div className="container flex items-center justify-center px-4">
+      <div className="container flex items-center justify-center px-4 max-w-6xl mx-auto">
         <div className="flex items-center gap-6 text-sm text-muted-foreground py-2 md:py-4">
           <nav className="flex flex-col md:flex-row gap-2" aria-label="Authors">
             <ul className="contents">

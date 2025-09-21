@@ -45,10 +45,18 @@ describe('Header', () => {
   test('renders brand and auth links', () => {
     render(<Header />);
 
-    expect(screen.getByRole('link', { name: /rest client/i })).toHaveAttribute('href', '/');
+    expect(screen.getByRole('link', { name: /rest client/i })).toHaveAttribute(
+      'href',
+      '/'
+    );
 
-    expect(screen.getByRole('link', { name: /sign in/i })).toHaveAttribute('href', '/signin');
-    expect(screen.getByRole('link', { name: /sign up/i })).toHaveAttribute('href', '/signup');
+    expect(screen.getByRole('link', { name: /sign in/i })).toHaveAttribute(
+      'href',
+      '/signin'
+    );
+    expect(screen.getByRole('link', { name: /sign up/i })).toHaveAttribute(
+      'href',
+      '/signup'
+    );
   });
-
 });

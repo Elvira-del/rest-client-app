@@ -16,7 +16,6 @@ vi.mock('next/navigation', () => {
   return { useRouter, usePathname, useSearchParams };
 });
 
-
 vi.mock('@/lib/firebase/firebase', () => {
   const auth = {
     currentUser: null,
@@ -29,7 +28,6 @@ vi.mock('@/lib/firebase/firebase', () => {
   const db = {};
   return { auth, db };
 });
-
 
 vi.mock('next-intl', () => ({
   useTranslations: (ns?: string) => {
@@ -64,7 +62,9 @@ vi.mock('@hookform/resolvers/zod', () => ({
 describe('SignUpPage', () => {
   test('renders title, subtitle, labels and submit button', () => {
     render(<SignUpPage />);
-    expect(screen.getByRole('heading', { name: /sign up/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: /sign up/i })
+    ).toBeInTheDocument();
     expect(
       screen.getByText(/create a new account to get started/i)
     ).toBeInTheDocument();

@@ -16,7 +16,7 @@ export const MainAfterAuth = () => {
 
   return (
     <section>
-      <div className="container max-w-4xl mx-auto space-y-6">
+      <div className="container max-w-6xl mx-auto">
         <div className="text-center space-y-2">
           <h1 className="text-3xl">{t('title', { username })}</h1>
           <p className="text-muted-foreground">{t('description')}</p>

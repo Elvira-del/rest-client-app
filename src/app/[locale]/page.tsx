@@ -8,7 +8,7 @@ export default function HomePage() {
   const { user, loading } = useAuth();
 
   return (
-    <main className="flex min-h-screen items-center justify-center">
+    <main className="flex flex-col gap-10">
       {!loading && user ? <MainAfterAuth /> : <MainBeforeAuth />}
     </main>
   );
