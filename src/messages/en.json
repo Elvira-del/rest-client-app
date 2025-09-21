@@ -215,5 +215,11 @@
       "invalidTitle": "Body is not valid JSON",
       "invalidDesc": "Please enter a valid JSON before formatting."
     }
+  },
+  "HeadersEditor": {
+    "label": "Headers",
+    "add": "Add Header",
+    "keyPlaceholder": "Key",
+    "valuePlaceholder": "Value"
   }
 }

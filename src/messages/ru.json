@@ -215,5 +215,11 @@
       "invalidTitle": "Тело — невалидный JSON",
       "invalidDesc": "Пожалуйста, введите корректный JSON перед форматированием."
     }
+  },
+  "HeadersEditor": {
+    "label": "Заголовки",
+    "add": "Добавить заголовок",
+    "keyPlaceholder": "Ключ",
+    "valuePlaceholder": "Значение"
   }
 }
