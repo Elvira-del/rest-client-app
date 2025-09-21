@@ -116,11 +116,6 @@ export const Header = () => {
               </>
             )}
             {!loading && user && (
-              // <SignButton
-              //   role={'signout'}
-              //   type={'button'}
-              //   onClick={handleSignOut}
-              // />
               <div className="flex items-center gap-2">
                 <Link href="/">
                   <SignButton role={'mainpage'} type={'button'} />
