@@ -43,7 +43,6 @@ export const Header = () => {
           </div>
         </Link>
         <ErrorActiveButton />
-        <TestToast /> {/* Тестовая кнопка, потом убрать */}
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <Globe size={16} />

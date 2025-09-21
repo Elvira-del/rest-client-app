@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import messages from '../messages/en.json';
 
-import HomePage from './[locale]/page';
+import HomePage from '../app/[locale]/page';
 
 describe('HomePage', () => {
   it('should render with the title visible', () => {
