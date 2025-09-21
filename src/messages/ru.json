@@ -205,5 +205,15 @@
       "success": "Готово",
       "error": "Запрос не удался"
     }
+  },
+  "BodyEditor": {
+    "label": "Тело",
+    "placeholder": "{\"title\":\"fakeTitle\",\"userId\":1,\"body\":\"fakeMessage\"}",
+    "format": "Форматировать JSON",
+    "toast": {
+      "formatted": "Тело отформатировано",
+      "invalidTitle": "Тело — невалидный JSON",
+      "invalidDesc": "Пожалуйста, введите корректный JSON перед форматированием."
+    }
   }
 }

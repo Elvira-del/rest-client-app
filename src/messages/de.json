@@ -205,5 +205,15 @@
       "success": "Fertig",
       "error": "Anfrage fehlgeschlagen"
     }
+  },
+  "BodyEditor": {
+    "label": "Body",
+    "placeholder": "{\"title\":\"fakeTitle\",\"userId\":1,\"body\":\"fakeMessage\"}",
+    "format": "JSON formatieren",
+    "toast": {
+      "formatted": "Body formatiert",
+      "invalidTitle": "Body ist kein gültiges JSON",
+      "invalidDesc": "Bitte gib vor dem Formatieren gültiges JSON ein."
+    }
   }
 }
