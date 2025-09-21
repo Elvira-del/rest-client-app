@@ -1,12 +1,26 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import '@testing-library/jest-dom';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { HeadersEditor } from '@/components/HeadersEditor';
 
+vi.mock('next-intl', () => ({
+  useTranslations: (ns?: string) => {
+    const dict: Record<string, Record<string, string>> = {
+      HeadersEditor: {
+        label: 'Headers',
+        add: 'Add Header',
+        keyPlaceholder: 'Key',
+        valuePlaceholder: 'Value',
+      },
+    };
+    return (key: string) => dict[ns!][key];
+  },
+}));
+
 describe('HeadersEditor', () => {
-  test.skip('renders initial row and delete is disabled when only one', () => {
+  test('renders initial row and delete is disabled when only one', () => {
     render(<HeadersEditor />);
     const keyInputs = screen.getAllByPlaceholderText('Key');
     const valueInputs = screen.getAllByPlaceholderText('Value');
@@ -16,7 +30,7 @@ describe('HeadersEditor', () => {
     expect(deleteBtn).toBeDisabled();
   });
 
-  test.skip('add a header row', async () => {
+  test('add a header row', async () => {
     const user = userEvent.setup();
     render(<HeadersEditor />);
     const addBtn = screen.getByRole('button', { name: /add header/i });
@@ -25,7 +39,7 @@ describe('HeadersEditor', () => {
     deleteButtons.forEach((b) => expect(b).not.toBeDisabled());
   });
 
-  test.skip('updates key and value inputs via store', async () => {
+  test('updates key and value inputs via store', async () => {
     const user = userEvent.setup();
     render(<HeadersEditor />);
     const [keyInput] = screen.getAllByPlaceholderText(
@@ -40,7 +54,7 @@ describe('HeadersEditor', () => {
     expect(valueInput).toHaveValue('application/json');
   });
 
-  test.skip('removes a header row', async () => {
+  test('removes a header row', async () => {
     const user = userEvent.setup();
     render(<HeadersEditor />);
     const addBtn = screen.getByRole('button', { name: /add header/i });
