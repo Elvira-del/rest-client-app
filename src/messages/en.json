@@ -184,5 +184,15 @@
     "clearHistory": "Clear History",
     "noRequests": "No requests found. Start making requests in the REST client to see them here.",
     "goToClient": "Go to REST Client"
+  },
+  "RestClientPage": {
+    "title": "REST Client",
+    "description": "Make HTTP requests and test APIs",
+    "requestCardTitle": "Request",
+    "tabs": {
+      "headers": "Headers",
+      "body": "Body",
+      "code": "Generated Code"
+    }
   }
 }

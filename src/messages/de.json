@@ -184,5 +184,15 @@
     "clearHistory": "Verlauf löschen",
     "noRequests": "Keine Anfragen gefunden. Beginnen Sie mit Anfragen im REST-Client, um sie hier zu sehen.",
     "goToClient": "Zum REST-Client gehen"
+  },
+  "RestClientPage": {
+    "title": "REST-Client",
+    "description": "HTTP-Anfragen senden und APIs testen",
+    "requestCardTitle": "Anfrage",
+    "tabs": {
+      "headers": "Header",
+      "body": "Body",
+      "code": "Generierter Code"
+    }
   }
 }

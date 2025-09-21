@@ -184,5 +184,15 @@
     "clearHistory": "Очистить историю",
     "noRequests": "Запросы не найдены. Начните делать запросы в REST клиенте, чтобы увидеть их здесь.",
     "goToClient": "Перейти в REST клиент"
+  },
+  "RestClientPage": {
+    "title": "REST-клиент",
+    "description": "Выполняйте HTTP-запросы и тестируйте API",
+    "requestCardTitle": "Запрос",
+    "tabs": {
+      "headers": "Заголовки",
+      "body": "Тело",
+      "code": "Сгенерированный код"
+    }
   }
 }
