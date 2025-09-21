@@ -12,7 +12,6 @@ import {
 } from '@/components/ui/select';
 import { SignButton } from './SignButton';
 import { ErrorActiveButton } from '@/components/ErrorActiveButton';
-import TestToast from '@/components/TestToast';
 import { auth } from '@/lib/firebase/firebase';
 import { signOut } from 'firebase/auth';
 import { useAuth } from '@/lib/hooks/useAith';
@@ -26,6 +25,7 @@ type StaticPathname =
   | '/history'
   | '/variables'
   | '/rest-client';
+
 
 export const Header = () => {
   const router = useRouter();
@@ -76,7 +76,6 @@ export const Header = () => {
           </div>
         </Link>
         <ErrorActiveButton />
-        <TestToast /> {/* Тестовая кнопка, потом убрать */}
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <Globe size={16} />
