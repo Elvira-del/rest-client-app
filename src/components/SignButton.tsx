@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from './ui/button';
 
 type SignButtonProps = {
-  role: 'signin' | 'signup' | 'signout' | 'backhome';
+  role: 'signin' | 'signup' | 'signout' | 'backhome' | 'mainpage';
   type: 'button' | 'submit' | 'reset';
   onClick?: () => void | Promise<void>;
 };

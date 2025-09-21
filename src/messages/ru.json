@@ -2,6 +2,10 @@
   "SignButton": {
     "signin": "Войти",
     "signup": "Зарегистрироваться",
+    "signout": "Выйти",
+    "mainpage": "На главную"
+  },
+  "Header": {
     "signout": "Выйти"
   },
   "Auth": {
