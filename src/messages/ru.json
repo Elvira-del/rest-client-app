@@ -194,5 +194,16 @@
       "body": "Тело",
       "code": "Сгенерированный код"
     }
+  },
+  "MethodEndpointBar": {
+    "endpointPlaceholder": "https://api.example.com/users",
+    "send": "Отправить",
+    "toast": {
+      "invalidJsonTitle": "Тело — невалидный JSON",
+      "invalidJsonDesc": "Исправьте JSON, чтобы продолжить.",
+      "sending": "Отправка…",
+      "success": "Готово",
+      "error": "Запрос не удался"
+    }
   }
 }

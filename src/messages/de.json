@@ -194,5 +194,16 @@
       "body": "Body",
       "code": "Generierter Code"
     }
+  },
+  "MethodEndpointBar": {
+    "endpointPlaceholder": "https://api.example.com/users",
+    "send": "Senden",
+    "toast": {
+      "invalidJsonTitle": "Body ist kein gültiges JSON",
+      "invalidJsonDesc": "Korrigiere das JSON, um fortzufahren.",
+      "sending": "Senden…",
+      "success": "Fertig",
+      "error": "Anfrage fehlgeschlagen"
+    }
   }
 }
