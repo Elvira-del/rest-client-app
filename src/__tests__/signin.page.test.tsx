@@ -29,7 +29,6 @@ vi.mock('@/lib/firebase/firebase', () => {
   return { auth, db };
 });
 
-
 vi.mock('next-intl', () => ({
   useTranslations: (ns?: string) => {
     const dict: Record<string, Record<string, string>> = {
@@ -67,16 +66,12 @@ describe('SignInPage', () => {
     ).toBeInTheDocument();
     expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: /submit/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /submit/i })).toBeInTheDocument();
   });
 
   test('renders footer prompt with link to /signup', () => {
     render(<SignInPage />);
-    expect(
-      screen.getByText(/don't have an account\?/i)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/don't have an account\?/i)).toBeInTheDocument();
     const link = screen.getByRole('link', { name: /sign up/i });
     expect(link).toHaveAttribute('href', '/signup');
   });
