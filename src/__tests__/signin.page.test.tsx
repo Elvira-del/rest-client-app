@@ -4,6 +4,32 @@ import React, { type ComponentProps } from 'react';
 import { render, screen } from '@testing-library/react';
 import SignInPage from '@/app/[locale]/(auth)/signin/page';
 
+vi.mock('next/navigation', () => {
+  const push = vi.fn();
+  const replace = vi.fn();
+  const back = vi.fn();
+  const prefetch = vi.fn();
+  const refresh = vi.fn();
+  const useRouter = () => ({ push, replace, back, prefetch, refresh });
+  const usePathname = () => '/signup';
+  const useSearchParams = () => new URLSearchParams();
+  return { useRouter, usePathname, useSearchParams };
+});
+
+vi.mock('@/lib/firebase/firebase', () => {
+  const auth = {
+    currentUser: null,
+    onAuthStateChanged: vi.fn((cb) => {
+      cb(null);
+      return () => {};
+    }),
+    signOut: vi.fn(),
+  };
+  const db = {};
+  return { auth, db };
+});
+
+
 vi.mock('next-intl', () => ({
   useTranslations: (ns?: string) => {
     const dict: Record<string, Record<string, string>> = {
@@ -41,12 +67,16 @@ describe('SignInPage', () => {
     ).toBeInTheDocument();
     expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /submit/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /submit/i })
+    ).toBeInTheDocument();
   });
 
   test('renders footer prompt with link to /signup', () => {
     render(<SignInPage />);
-    expect(screen.getByText(/don't have an account\?/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/don't have an account\?/i)
+    ).toBeInTheDocument();
     const link = screen.getByRole('link', { name: /sign up/i });
     expect(link).toHaveAttribute('href', '/signup');
   });

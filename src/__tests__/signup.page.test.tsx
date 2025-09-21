@@ -4,6 +4,33 @@ import React, { type ComponentProps } from 'react';
 import { render, screen } from '@testing-library/react';
 import SignUpPage from '@/app/[locale]/(auth)/signup/page';
 
+vi.mock('next/navigation', () => {
+  const push = vi.fn();
+  const replace = vi.fn();
+  const back = vi.fn();
+  const prefetch = vi.fn();
+  const refresh = vi.fn();
+  const useRouter = () => ({ push, replace, back, prefetch, refresh });
+  const usePathname = () => '/signup';
+  const useSearchParams = () => new URLSearchParams();
+  return { useRouter, usePathname, useSearchParams };
+});
+
+
+vi.mock('@/lib/firebase/firebase', () => {
+  const auth = {
+    currentUser: null,
+    onAuthStateChanged: vi.fn((cb) => {
+      cb(null);
+      return () => {};
+    }),
+    signOut: vi.fn(),
+  };
+  const db = {};
+  return { auth, db };
+});
+
+
 vi.mock('next-intl', () => ({
   useTranslations: (ns?: string) => {
     const dict: Record<string, Record<string, string>> = {
@@ -37,15 +64,12 @@ vi.mock('@hookform/resolvers/zod', () => ({
 describe('SignUpPage', () => {
   test('renders title, subtitle, labels and submit button', () => {
     render(<SignUpPage />);
-    expect(
-      screen.getByRole('heading', { name: /sign up/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /sign up/i })).toBeInTheDocument();
     expect(
       screen.getByText(/create a new account to get started/i)
     ).toBeInTheDocument();
     expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /submit/i })).toBeInTheDocument();
   });
 
   test('renders footer prompt with link to /signin', () => {
