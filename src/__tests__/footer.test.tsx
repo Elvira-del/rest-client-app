@@ -28,7 +28,10 @@ describe('Footer', () => {
   test('renders course link with image and external icon', () => {
     render(<Footer />);
     const courseLink = screen.getByRole('link', { name: /go to course page/i });
-    expect(courseLink).toHaveAttribute('href', 'https://rs.school/courses/reactjs');
+    expect(courseLink).toHaveAttribute(
+      'href',
+      'https://rs.school/courses/reactjs'
+    );
     expect(courseLink).toHaveAttribute('target', '_blank');
     expect(courseLink).toHaveAttribute('rel', 'noopener noreferrer');
     const logo = screen.getByAltText('RS School logo') as HTMLImageElement;

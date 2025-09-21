@@ -26,7 +26,6 @@ type StaticPathname =
   | '/variables'
   | '/rest-client';
 
-
 export const Header = () => {
   const router = useRouter();
   const pathname = usePathname();

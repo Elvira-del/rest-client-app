@@ -5,24 +5,25 @@ import { render, screen } from '@testing-library/react';
 import { MainAfterAuth } from '@/components/MainAfterAuth';
 
 vi.mock('next-intl', () => ({
-  useTranslations: (ns?: string) => (key: string, values?: Record<string, string>) => {
-    const dict: Record<string, Record<string, string>> = {
-      MainAfterAuth: {
-        title: `Welcome back, ${values?.username}!`,
-        description: 'Choose an option to get started',
-        'rest-client.title': 'REST Client',
-        'rest-client.description': 'Make HTTP requests and test APIs',
-        'rest-client.button': 'Open REST Client',
-        'history.title': 'History',
-        'history.description': 'View your request history',
-        'history.button': 'View History',
-        'variables.title': 'Variables',
-        'variables.description': 'Manage your environment variables',
-        'variables.button': 'Manage Variables',
-      },
-    };
-    return dict[ns!][key];
-  },
+  useTranslations:
+    (ns?: string) => (key: string, values?: Record<string, string>) => {
+      const dict: Record<string, Record<string, string>> = {
+        MainAfterAuth: {
+          title: `Welcome back, ${values?.username}!`,
+          description: 'Choose an option to get started',
+          'rest-client.title': 'REST Client',
+          'rest-client.description': 'Make HTTP requests and test APIs',
+          'rest-client.button': 'Open REST Client',
+          'history.title': 'History',
+          'history.description': 'View your request history',
+          'history.button': 'View History',
+          'variables.title': 'Variables',
+          'variables.description': 'Manage your environment variables',
+          'variables.button': 'Manage Variables',
+        },
+      };
+      return dict[ns!][key];
+    },
 }));
 
 vi.mock('@/i18n/navigation', () => {
@@ -40,7 +41,7 @@ describe('MainAfterAuth', () => {
   });
 
   test('renders REST Client card with button linking to /rest-client', () => {
-    render(<MainAfterAuth />);;
+    render(<MainAfterAuth />);
     const btn = screen.getByRole('button', { name: /open rest client/i });
     const link = btn.closest('a');
     expect(link).toHaveAttribute('href', '/rest-client');
@@ -52,5 +53,4 @@ describe('MainAfterAuth', () => {
     const link = btn.closest('a');
     expect(link).toHaveAttribute('href', '/history');
   });
-
 });
