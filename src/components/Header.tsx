@@ -12,7 +12,6 @@ import {
 } from '@/components/ui/select';
 import { SignButton } from './SignButton';
 import { ErrorActiveButton } from '@/components/ErrorActiveButton';
-import TestToast from '@/components/TestToast';
 
 export const Header = () => {
   const locale = useLocale();
