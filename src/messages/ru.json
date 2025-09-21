@@ -156,5 +156,33 @@
     "title": "404 - Страница не найдена",
     "description": "Страница не существует.",
     "backHome": "На главную"
+  },
+  "VariablesPage": {
+    "title": "Переменные",
+    "subtitlePart1": "Управляйте переменными окружения для ваших запросов.",
+    "subtitlePart2": "Используйте переменные в URL и заголовках с синтаксисом",
+    "addVariable": "Добавить переменную",
+    "key": "Ключ",
+    "value": "Значение",
+    "description": "Описание",
+    "keyPlaceholder": "API_BASE_URL",
+    "valuePlaceholder": "http://api.example.com",
+    "descriptionPlaceholder": "Базовый URL для API запросов",
+    "noVariables": "Переменные не найдены. Добавьте первую переменную выше, чтобы начать.",
+    "yourVariables": "Ваши переменные",
+    "howToUse": "Как использовать переменные:",
+    "howToUsePart1": "Используйте синтаксис",
+    "howToUsePart2": "в URL и заголовках запросов.",
+    "howToUsePart3": "Например:",
+    "howToUsePart4": "будет заменено на фактическое значение при отправке запросов.",
+    "edit": "Редактировать"
+  },
+  "HistoryPage": {
+    "title": "История запросов",
+    "descriptionCount": " запросов найдено",
+    "descriptionEmpty": "Ваша история запросов появится здесь",
+    "clearHistory": "Очистить историю",
+    "noRequests": "Запросы не найдены. Начните делать запросы в REST клиенте, чтобы увидеть их здесь.",
+    "goToClient": "Перейти в REST клиент"
   }
 }

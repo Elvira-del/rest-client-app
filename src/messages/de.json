@@ -156,5 +156,33 @@
     "title": "404 - Seite nicht gefunden",
     "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
     "backHome": "Zur Startseite"
+  },
+  "VariablesPage": {
+    "title": "Variablen",
+    "subtitlePart1": "Verwalten Sie Umgebungsvariablen für Ihre Anfragen.",
+    "subtitlePart2": "Verwenden Sie Variablen in URLs und Headern mit der Syntax",
+    "addVariable": "Variable hinzufügen",
+    "key": "Schlüssel",
+    "value": "Wert",
+    "description": "Beschreibung",
+    "keyPlaceholder": "API_BASE_URL",
+    "valuePlaceholder": "http://api.example.com",
+    "descriptionPlaceholder": "Basis-URL für API-Anfragen",
+    "noVariables": "Keine Variablen gefunden. Fügen Sie Ihre erste Variable oben hinzu, um zu beginnen.",
+    "yourVariables": "Ihre Variablen",
+    "howToUse": "So verwenden Sie Variablen:",
+    "howToUsePart1": "Verwenden Sie die Syntax",
+    "howToUsePart2": "in Ihren Request-URLs und Headern.",
+    "howToUsePart3": "Zum Beispiel:",
+    "howToUsePart4": "wird beim Senden von Anfragen durch den tatsächlichen Wert ersetzt.",
+    "edit": "Bearbeiten"
+  },
+  "HistoryPage": {
+    "title": "Anfrageverlauf",
+    "descriptionCount": " Anfragen gefunden",
+    "descriptionEmpty": "Ihr Anfrageverlauf wird hier angezeigt",
+    "clearHistory": "Verlauf löschen",
+    "noRequests": "Keine Anfragen gefunden. Beginnen Sie mit Anfragen im REST-Client, um sie hier zu sehen.",
+    "goToClient": "Zum REST-Client gehen"
   }
 }
