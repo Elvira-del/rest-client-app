@@ -11,15 +11,39 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { SignButton } from './SignButton';
+import { ErrorActiveButton } from '@/components/ErrorActiveButton';
+import TestToast from '@/components/TestToast';
+import { auth } from '@/lib/firebase/firebase';
+import { signOut } from 'firebase/auth';
+import { useAuth } from '@/lib/hooks/useAith';
 
 export const Header = () => {
   const locale = useLocale();
-
   const pathname = usePathname();
   const router = useRouter();
+  const { user, loading } = useAuth();
 
   const handleSwitchLang = (value: string) => {
-    router.replace(pathname, { locale: value });
+    router.replace(
+      pathname as
+        | '/'
+        | '/signin'
+        | '/signup'
+        | '/rest-client'
+        | '/rest-client/[method]/[[...url]]'
+        | '/history'
+        | '/variables',
+      { locale: value }
+    );
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      router.push('/signin');
+    } catch (error) {
+      console.error('Sign-out error:', error);
+    }
   };
 
   return (
@@ -31,7 +55,8 @@ export const Header = () => {
             <span className="font-semibold">REST Client</span>
           </div>
         </Link>
-
+        <ErrorActiveButton />
+        <TestToast /> {/* Тестовая кнопка, потом убрать */}
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <Globe size={16} />
@@ -48,12 +73,23 @@ export const Header = () => {
           </div>
 
           <div className="flex gap-2">
-            <Link href="/signin">
-              <SignButton role={'signin'} type={'button'} />
-            </Link>
-            <Link href="/signup">
-              <SignButton role={'signup'} type={'button'} />
-            </Link>        
+            {!loading && !user && (
+              <>
+                <Link href="/signin">
+                  <SignButton role={'signin'} type={'button'} />
+                </Link>
+                <Link href="/signup">
+                  <SignButton role={'signup'} type={'button'} />
+                </Link>
+              </>
+            )}
+            {!loading && user && (
+              <SignButton
+                role={'signout'}
+                type={'button'}
+                onClick={handleSignOut}
+              />
+            )}
           </div>
         </div>
       </div>

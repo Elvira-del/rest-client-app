@@ -1,7 +1,8 @@
 {
   "SignButton": {
     "signin": "Sign In",
-    "signup": "Sign Up"
+    "signup": "Sign Up",
+    "signout": "Sign Out"
   },
   "Auth": {
     "signUpTitle": "Sign Up",
@@ -10,6 +11,7 @@
     "signinSubtitle": "Enter your credentials to access your account",
     "email": "Email",
     "password": "Password",
+    "loading": "Loading...",
     "signin": "Submit",
     "signup": "Sign Up",
     "noAccount": "Don't have an account?",
@@ -19,10 +21,11 @@
     "minPassword": "Minimum 8 characters with letter, digit and special character",
     "errors": {
       "passWrong": "Password must be at least 8 characters with letter digit and spectial character",
-      "invalidEmail": "Invalid email"
+      "invalidEmail": "Invalid email",
+      "signInFailed": "Sign in failled"
     }
   },
-  "Main": {
+  "MainBeforeAuth": {
     "hero": {
       "title": "REST Client - API Testing Made Simple",
       "description": "A lightweight, powerful tool for testing and debugging REST APIs"
@@ -133,5 +136,29 @@
         }
       }
     }
+  },
+  "MainAfterAuth": {
+    "title": "Welcome back, {username}!",
+    "description": "Choose an option to get started",
+    "rest-client": {
+      "title": "REST Client",
+      "description": "Make HTTP requests and test APIs",
+      "button": "Open REST Client"
+    },
+    "history": {
+      "title": "History",
+      "description": "View your request history",
+      "button": "View History"
+    },
+    "variables": {
+      "title": "Variables",
+      "description": "Manage your environment variables",
+      "button": "Manage Variables"
+    }
+  },
+  "NotFound": {
+    "title": "404 - Page not found",
+    "description": "The page you’re looking for doesn’t exist.",
+    "backHome": "Go home"
   }
 }

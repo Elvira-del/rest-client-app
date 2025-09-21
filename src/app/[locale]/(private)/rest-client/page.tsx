@@ -1,3 +1,11 @@
-export default function RestClientPage() {
-  return <h1>REST Client Page</h1>;
+import { redirect } from '@/i18n/navigation';
+
+export default function RestClientRootPage() {
+  redirect({
+    href: {
+      pathname: '/rest-client/[method]',
+      params: { method: 'GET' },
+    },
+    locale: 'en',
+  });
 }

@@ -29,4 +29,10 @@ dist-ssr
 # Tests
 coverage/
 
+.vercel
+.vscode
+
+.env
+.env.example
 .env.local
+.env.staging
