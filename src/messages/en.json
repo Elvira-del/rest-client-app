@@ -156,5 +156,25 @@
     "title": "404 - Page not found",
     "description": "The page you’re looking for doesn’t exist.",
     "backHome": "Go home"
-  }
+  },
+  "VariablesPage": {
+    "title": "Variables",
+    "subtitlePart1": "Manage environment variables for your requests.",
+    "subtitlePart2": "Use variables in URLs and headers with syntax",
+    "addVariable": "Add a variable",
+    "key": "Key",
+    "value": "Value", 
+    "description": "Description",
+    "keyPlaceholder": "API_BASE_URL",
+    "valuePlaceholder": "http://api.example.com",
+    "descriptionPlaceholder": "Base URL for API requests",
+    "noVariables": "No variables found. Add your first variable above to get started.",
+    "yourVariables": "Your Variables",
+    "howToUse": "How to use variables:",
+    "howToUsePart1": "Use ",
+    "howToUsePart2": "syntax in your request URLs and headers.",
+    "howToUsePart3": "For example:",
+    "howToUsePart4": "will be replaced with the actual value when sending requests.",
+    "edit": "Edit"
+}
 }
