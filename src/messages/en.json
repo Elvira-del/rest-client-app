@@ -2,6 +2,10 @@
   "SignButton": {
     "signin": "Sign In",
     "signup": "Sign Up",
+    "signout": "Sign Out",
+    "mainpage": "Main page"
+  },
+  "Header": {
     "signout": "Sign Out"
   },
   "Auth": {

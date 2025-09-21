@@ -1,8 +1,8 @@
 'use client';
 
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
-import { useLocale } from 'next-intl';
-import { Globe, House } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
+import { Globe, House, LogOut, User } from 'lucide-react';
 import {
   Select,
   SelectContent,
@@ -17,6 +17,14 @@ import { signOut } from 'firebase/auth';
 import { useAuth } from '@/lib/hooks/useAith';
 import { useTransition } from 'react';
 import { useParams } from 'next/navigation';
+import { Button } from './ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
 
 type StaticPathname =
   | '/'
@@ -27,6 +35,8 @@ type StaticPathname =
   | '/rest-client';
 
 export const Header = () => {
+  const t = useTranslations('Header');
+
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
@@ -106,11 +116,31 @@ export const Header = () => {
               </>
             )}
             {!loading && user && (
-              <SignButton
-                role={'signout'}
-                type={'button'}
-                onClick={handleSignOut}
-              />
+              // <SignButton
+              //   role={'signout'}
+              //   type={'button'}
+              //   onClick={handleSignOut}
+              // />
+              <div className="flex items-center gap-2">
+                <Link href="/">
+                  <SignButton role={'mainpage'} type={'button'} />
+                </Link>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                      <User className="h-4 w-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem disabled>{user.email}</DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleSignOut}>
+                      <LogOut className="h-4 w-4 mr-2" />
+                      {t('signout')}
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
             )}
           </div>
         </div>
