@@ -236,5 +236,13 @@
       "csharp": "C#",
       "go": "Go"
     }
+  },
+  "ResponseViewer": {
+    "title": "Response",
+    "tabs": {
+      "body": "Body",
+      "headers": "Headers"
+    },
+    "noHeaders": "No response headers."
   }
 }

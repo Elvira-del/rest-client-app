@@ -4,8 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Badge } from './ui/badge';
 import { useRestClientStore } from '@/store/useRestClientStore';
+import { useTranslations } from 'next-intl';
 
 export const ResponseViewer = () => {
+  const t = useTranslations('ResponseViewer');
+
   const response = useRestClientStore((state) => state.response);
 
   if (!response) return null;
@@ -14,7 +17,7 @@ export const ResponseViewer = () => {
     <Card>
       <CardHeader>
         <div className="flex items-center justify-between">
-          <CardTitle>Response</CardTitle>
+          <CardTitle>{t('title')}</CardTitle>
           <div className="flex items-center gap-2">
             <Badge>
               {response?.status !== undefined
@@ -30,8 +33,8 @@ export const ResponseViewer = () => {
       <CardContent>
         <Tabs defaultValue="body">
           <TabsList>
-            <TabsTrigger value="body">Body</TabsTrigger>
-            <TabsTrigger value="headers">Headers</TabsTrigger>
+            <TabsTrigger value="body">{t('tabs.body')}</TabsTrigger>
+            <TabsTrigger value="headers">{t('tabs.headers')}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="body">
@@ -54,7 +57,7 @@ export const ResponseViewer = () => {
               </div>
             ) : (
               <div className="text-sm text-muted-foreground">
-                No response headers.
+                {t('noHeaders')}
               </div>
             )}
           </TabsContent>

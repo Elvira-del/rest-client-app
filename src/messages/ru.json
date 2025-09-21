@@ -236,5 +236,13 @@
       "csharp": "C#",
       "go": "Go"
     }
+  },
+  "ResponseViewer": {
+    "title": "Ответ",
+    "tabs": {
+      "body": "Тело",
+      "headers": "Заголовки"
+    },
+    "noHeaders": "Заголовки ответа отсутствуют."
   }
 }
