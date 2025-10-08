@@ -1,0 +1,256 @@
+{
+  "SignButton": {
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "signout": "Sign Out",
+    "mainpage": "Main page"
+  },
+  "Header": {
+    "signout": "Sign Out"
+  },
+  "Auth": {
+    "signUpTitle": "Sign Up",
+    "signUpSubtitle": "Create a new account to get started",
+    "signinTitle": "Sign In",
+    "signinSubtitle": "Enter your credentials to access your account",
+    "email": "Email",
+    "password": "Password",
+    "loading": "Loading...",
+    "signin": "Submit",
+    "signup": "Sign Up",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Do you already have an account?",
+    "createAccount": "Sign Up",
+    "signinAccount": "Sign In",
+    "minPassword": "Minimum 8 characters with letter, digit and special character",
+    "errors": {
+      "passWrong": "Password must be at least 8 characters with letter digit and spectial character",
+      "invalidEmail": "Invalid email",
+      "signInFailed": "Sign in failled"
+    }
+  },
+  "MainBeforeAuth": {
+    "hero": {
+      "title": "REST Client - API Testing Made Simple",
+      "description": "A lightweight, powerful tool for testing and debugging REST APIs"
+    },
+    "about": {
+      "subtitle": "About This Project",
+      "content": "This REST client application is a modern, lightweight alternative to Postman, built with cutting-edge web technologies. It provides developers with an intuitive interface for testing APIs, managing requests, and organizing their development workflow."
+    },
+    "features": {
+      "subtitle": "Key Features",
+      "request": {
+        "title": "HTTP Requests",
+        "content": "Make HTTP requests with full customization"
+      },
+      "history": {
+        "title": "Request History",
+        "content": "Automatic request history tracking"
+      },
+      "variables": {
+        "title": "Variables",
+        "content": "Environment variables management"
+      },
+      "auth": {
+        "title": "Authentication",
+        "content": "Secure user authentication"
+      },
+      "lang": {
+        "title": "Multi-language",
+        "content": "Multi-language support"
+      },
+      "stack": {
+        "title": "Modern Stack",
+        "content": "Built with Next.js, TypeScript, and Tailwind CSS"
+      }
+    },
+    "development": {
+      "subtitle": "Development Team",
+      "developers": {
+        "title": "Development Team",
+        "content": "Built by cool people who created this app with a clear, minimalistic, and accessible design.",
+        "team": {
+          "first": {
+            "name": "Elvira Krutova - Frontend Developer/Team Lead",
+            "description": "Focused on UI implementation, i18n, and project setup."
+          },
+          "second": {
+            "name": "Pavel Kozin - Frontend Developer",
+            "description": "Worked on API requests and testing."
+          },
+          "third": {
+            "name": "Konstantin Kukukshkin - Frontend Developer",
+            "description": "Contributed to API integration and error handling."
+          }
+        },
+        "badge": {
+          "first": "Next.js",
+          "second": "TypeScript",
+          "third": "Tailwind CSS"
+        }
+      },
+      "details": {
+        "title": "Project Details",
+        "list": {
+          "firstitem": {
+            "title": "Architecture",
+            "description": "Modern Next.js application with component-based architecture"
+          },
+          "seconditem": {
+            "title": "Technologies",
+            "description": "Next.js, TypeScript, Tailwind CSS v4, Shadcn/ui components"
+          },
+          "thirditem": {
+            "title": "Features",
+            "description": "Authentication, i18n, responsive design, error boundaries"
+          },
+          "fourthitem": {
+            "title": "Performance",
+            "description": "Lazy loading, code splitting, optimized bundle size"
+          }
+        },
+        "badge": {
+          "first": "PWA Ready",
+          "second": "Mobile First",
+          "third": "Accessible"
+        }
+      },
+      "course": {
+        "title": "Course Information",
+        "content": "This project was developed as part of an advanced web development course, demonstrating modern Next.js patterns, authentication, internationalization, and responsive design principles.",
+        "list": {
+          "firstitem": {
+            "title": "Learning Objectives",
+            "description": "Master modern web development patterns and best practices"
+          },
+          "seconditem": {
+            "title": "Key Concepts",
+            "description": "Component architecture, state management, authentication flows"
+          },
+          "thirditem": {
+            "title": "Practical Skills",
+            "description": "Building production-ready applications with modern tooling"
+          }
+        },
+        "badge": {
+          "first": "Web Development",
+          "second": "Frontend",
+          "third": "API Design"
+        }
+      }
+    }
+  },
+  "MainAfterAuth": {
+    "title": "Welcome back, {username}!",
+    "description": "Choose an option to get started",
+    "rest-client": {
+      "title": "REST Client",
+      "description": "Make HTTP requests and test APIs",
+      "button": "Open REST Client"
+    },
+    "history": {
+      "title": "History",
+      "description": "View your request history",
+      "button": "View History"
+    },
+    "variables": {
+      "title": "Variables",
+      "description": "Manage your environment variables",
+      "button": "Manage Variables"
+    }
+  },
+  "NotFound": {
+    "title": "404 - Page not found",
+    "description": "The page you’re looking for doesn’t exist.",
+    "backHome": "Go home"
+  },
+  "VariablesPage": {
+    "title": "Variables",
+    "subtitlePart1": "Manage environment variables for your requests.",
+    "subtitlePart2": "Use variables in URLs and headers with syntax",
+    "addVariable": "Add a variable",
+    "key": "Key",
+    "value": "Value",
+    "description": "Description",
+    "keyPlaceholder": "API_BASE_URL",
+    "valuePlaceholder": "http://api.example.com",
+    "descriptionPlaceholder": "Base URL for API requests",
+    "noVariables": "No variables found. Add your first variable above to get started.",
+    "yourVariables": "Your Variables",
+    "howToUse": "How to use variables:",
+    "howToUsePart1": "Use ",
+    "howToUsePart2": "syntax in your request URLs and headers.",
+    "howToUsePart3": "For example:",
+    "howToUsePart4": "will be replaced with the actual value when sending requests.",
+    "edit": "Edit"
+  },
+  "HistoryPage": {
+    "title": "Request History",
+    "descriptionCount": " requests found",
+    "descriptionEmpty": "Your request history will appear here",
+    "clearHistory": "Clear History",
+    "noRequests": "No requests found. Start making requests in the REST client to see them here.",
+    "goToClient": "Go to REST Client"
+  },
+  "RestClientPage": {
+    "title": "REST Client",
+    "description": "Make HTTP requests and test APIs",
+    "requestCardTitle": "Request",
+    "tabs": {
+      "headers": "Headers",
+      "body": "Body",
+      "code": "Generated Code"
+    }
+  },
+  "MethodEndpointBar": {
+    "endpointPlaceholder": "https://api.example.com/users",
+    "send": "Send",
+    "toast": {
+      "invalidJsonTitle": "Body is not valid JSON",
+      "invalidJsonDesc": "Fix JSON to proceed.",
+      "sending": "Sending…",
+      "success": "Done",
+      "error": "Request failed"
+    }
+  },
+  "BodyEditor": {
+    "label": "Body",
+    "placeholder": "{\"title\":\"fakeTitle\",\"userId\":1,\"body\":\"fakeMessage\"}",
+    "format": "Format JSON",
+    "toast": {
+      "formatted": "Body formatted",
+      "invalidTitle": "Body is not valid JSON",
+      "invalidDesc": "Please enter a valid JSON before formatting."
+    }
+  },
+  "HeadersEditor": {
+    "label": "Headers",
+    "add": "Add Header",
+    "keyPlaceholder": "Key",
+    "valuePlaceholder": "Value"
+  },
+  "GeneratedCode": {
+    "label": "Generated Code",
+    "copy": "Copy",
+    "noUrlHint": "// Provide endpoint to generate code",
+    "languages": {
+      "curl": "cURL",
+      "javascript-fetch": "JavaScript (Fetch API)",
+      "javascript-xhr": "JavaScript (XHR)",
+      "nodejs": "NodeJS",
+      "python": "Python",
+      "java": "Java",
+      "csharp": "C#",
+      "go": "Go"
+    }
+  },
+  "ResponseViewer": {
+    "title": "Response",
+    "tabs": {
+      "body": "Body",
+      "headers": "Headers"
+    },
+    "noHeaders": "No response headers."
+  }
+}

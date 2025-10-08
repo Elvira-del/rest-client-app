@@ -1,0 +1,256 @@
+{
+  "SignButton": {
+    "signin": "Войти",
+    "signup": "Зарегистрироваться",
+    "signout": "Выйти",
+    "mainpage": "На главную"
+  },
+  "Header": {
+    "signout": "Выйти"
+  },
+  "Auth": {
+    "signUpTitle": "Зарегистрироваться",
+    "signUpSubtitle": "Создайте новую учетную запись, чтобы начать",
+    "signinTitle": "Войти",
+    "signinSubtitle": "Введите свои учетные данные",
+    "email": "Электронная почта",
+    "password": "Пароль",
+    "loading": "загрузка...",
+    "signin": "Продолжить",
+    "signup": "Зарегистрироваться",
+    "noAccount": "Нет аккаунта?",
+    "haveAccount": "Уже есть аккаунт?",
+    "createAccount": "Создать",
+    "signinAccount": "Войти",
+    "minPassword": "Минимум 8 символов, включая букву, цифру и специальный символ",
+    "errors": {
+      "passWrong": "Пароль должен содержать не менее 8 символов включая букву цифру и специальный символ",
+      "invalidEmail": "Неверный адрес электронной почты",
+      "signInFailed": "Sign in failled"
+    }
+  },
+  "MainBeforeAuth": {
+    "hero": {
+      "title": "REST Client - Простое тестирование API",
+      "description": "Легковесный и мощный инструмент для тестирования и отладки REST API"
+    },
+    "about": {
+      "subtitle": "О проекте",
+      "content": "Это REST-клиент приложение представляет собой современную, облегченную альтернативу Postman, созданную с использованием передовых веб-технологий. Приложение предоставляет разработчикам интуитивно понятный интерфейс для тестирования API, управления запросами и организации рабочего процесса разработки."
+    },
+    "features": {
+      "subtitle": "Ключевые особенности",
+      "request": {
+        "title": "HTTP-запросы",
+        "content": "Создавайте кастомизированные HTTP-запросы"
+      },
+      "history": {
+        "title": "История запросов",
+        "content": "Автоматическое отслеживание истории запросов"
+      },
+      "variables": {
+        "title": "Переменные",
+        "content": "Управление переменными среды"
+      },
+      "auth": {
+        "title": "Аутентификация",
+        "content": "Безопасная аутентификация пользователей"
+      },
+      "lang": {
+        "title": "Мультиязычность",
+        "content": "Поддержка мультиязычности"
+      },
+      "stack": {
+        "title": "Современный стек",
+        "content": "Создано с использованием Next.js, TypeScript и Tailwind CSS"
+      }
+    },
+    "development": {
+      "subtitle": "Команда разработки",
+      "developers": {
+        "title": "Команда разработки",
+        "content": "Сделано классными ребятами, которые создали это приложение в понятном, минималистичном и доступном дизайне.",
+        "team": {
+          "first": {
+            "name": "Эльвира Крутова — Frontend Developer/Team Lead",
+            "description": "Работала над реализацией интерфейса, i18n и настройкой проекта."
+          },
+          "second": {
+            "name": "Павел Козин — Frontend Developer",
+            "description": "Занимался запросами к API и тестированием."
+          },
+          "third": {
+            "name": "Константин Кукукшкин — Frontend Developer",
+            "description": "Внёс вклад в интеграцию с API и обработку ошибок."
+          }
+        },
+        "badge": {
+          "first": "Next.js",
+          "second": "TypeScript",
+          "third": "Tailwind CSS"
+        }
+      },
+      "details": {
+        "title": "Детали проекта",
+        "list": {
+          "firstitem": {
+            "title": "Архитектура",
+            "description": "Современное Next.js-приложение с компонентной архитектурой"
+          },
+          "seconditem": {
+            "title": "Технологии",
+            "description": "Next.js, TypeScript, Tailwind CSS v4, компоненты Shadcn/ui"
+          },
+          "thirditem": {
+            "title": "Функциональность",
+            "description": "Аутентификация, i18n, адаптивный дизайн, обработка ошибок"
+          },
+          "fourthitem": {
+            "title": "Производительность",
+            "description": "Ленивая загрузка, разделение кода, оптимизированный размер бандла"
+          }
+        },
+        "badge": {
+          "first": "Готово к PWA",
+          "second": "Mobile First",
+          "third": "Доступность"
+        }
+      },
+      "course": {
+        "title": "Информация о курсе",
+        "content": "Этот проект был разработан в рамках продвинутого курса по веб-разработке, демонстрируя современные подходы Next.js, аутентификацию, интернационализацию и принципы адаптивного дизайна.",
+        "list": {
+          "firstitem": {
+            "title": "Учебные цели",
+            "description": "Освоить современные подходы и лучшие практики веб-разработки"
+          },
+          "seconditem": {
+            "title": "Ключевые концепции",
+            "description": "Компонентная архитектура, управление состоянием, процессы аутентификации"
+          },
+          "thirditem": {
+            "title": "Практические навыки",
+            "description": "Создание production-ready приложений с современными инструментами"
+          }
+        },
+        "badge": {
+          "first": "Веб-разработка",
+          "second": "Фронтенд",
+          "third": "Проектирование API"
+        }
+      }
+    }
+  },
+  "MainAfterAuth": {
+    "title": "С возвращением, {username}!",
+    "description": "Выберите действие, чтобы начать работу",
+    "rest-client": {
+      "title": "REST Client",
+      "description": "Выполняйте HTTP-запросы и тестируйте API",
+      "button": "Открыть REST Client"
+    },
+    "history": {
+      "title": "История",
+      "description": "Просматривайте историю ваших запросов",
+      "button": "Посмотреть историю"
+    },
+    "variables": {
+      "title": "Переменные",
+      "description": "Управляйте переменными окружения",
+      "button": "Управлять переменными"
+    }
+  },
+  "NotFound": {
+    "title": "404 - Страница не найдена",
+    "description": "Страница не существует.",
+    "backHome": "На главную"
+  },
+  "VariablesPage": {
+    "title": "Переменные",
+    "subtitlePart1": "Управляйте переменными окружения для ваших запросов.",
+    "subtitlePart2": "Используйте переменные в URL и заголовках с синтаксисом",
+    "addVariable": "Добавить переменную",
+    "key": "Ключ",
+    "value": "Значение",
+    "description": "Описание",
+    "keyPlaceholder": "API_BASE_URL",
+    "valuePlaceholder": "http://api.example.com",
+    "descriptionPlaceholder": "Базовый URL для API запросов",
+    "noVariables": "Переменные не найдены. Добавьте первую переменную выше, чтобы начать.",
+    "yourVariables": "Ваши переменные",
+    "howToUse": "Как использовать переменные:",
+    "howToUsePart1": "Используйте синтаксис",
+    "howToUsePart2": "в URL и заголовках запросов.",
+    "howToUsePart3": "Например:",
+    "howToUsePart4": "будет заменено на фактическое значение при отправке запросов.",
+    "edit": "Редактировать"
+  },
+  "HistoryPage": {
+    "title": "История запросов",
+    "descriptionCount": " запросов найдено",
+    "descriptionEmpty": "Ваша история запросов появится здесь",
+    "clearHistory": "Очистить историю",
+    "noRequests": "Запросы не найдены. Начните делать запросы в REST клиенте, чтобы увидеть их здесь.",
+    "goToClient": "Перейти в REST клиент"
+  },
+  "RestClientPage": {
+    "title": "REST-клиент",
+    "description": "Выполняйте HTTP-запросы и тестируйте API",
+    "requestCardTitle": "Запрос",
+    "tabs": {
+      "headers": "Заголовки",
+      "body": "Тело",
+      "code": "Сгенерированный код"
+    }
+  },
+  "MethodEndpointBar": {
+    "endpointPlaceholder": "https://api.example.com/users",
+    "send": "Отправить",
+    "toast": {
+      "invalidJsonTitle": "Тело — невалидный JSON",
+      "invalidJsonDesc": "Исправьте JSON, чтобы продолжить.",
+      "sending": "Отправка…",
+      "success": "Готово",
+      "error": "Запрос не удался"
+    }
+  },
+  "BodyEditor": {
+    "label": "Тело",
+    "placeholder": "{\"title\":\"fakeTitle\",\"userId\":1,\"body\":\"fakeMessage\"}",
+    "format": "Форматировать JSON",
+    "toast": {
+      "formatted": "Тело отформатировано",
+      "invalidTitle": "Тело — невалидный JSON",
+      "invalidDesc": "Пожалуйста, введите корректный JSON перед форматированием."
+    }
+  },
+  "HeadersEditor": {
+    "label": "Заголовки",
+    "add": "Добавить заголовок",
+    "keyPlaceholder": "Ключ",
+    "valuePlaceholder": "Значение"
+  },
+  "GeneratedCode": {
+    "label": "Сгенерированный код",
+    "copy": "Копировать",
+    "noUrlHint": "// Укажите endpoint, чтобы сгенерировать код",
+    "languages": {
+      "curl": "cURL",
+      "javascript-fetch": "JavaScript (Fetch API)",
+      "javascript-xhr": "JavaScript (XHR)",
+      "nodejs": "NodeJS",
+      "python": "Python",
+      "java": "Java",
+      "csharp": "C#",
+      "go": "Go"
+    }
+  },
+  "ResponseViewer": {
+    "title": "Ответ",
+    "tabs": {
+      "body": "Тело",
+      "headers": "Заголовки"
+    },
+    "noHeaders": "Заголовки ответа отсутствуют."
+  }
+}
