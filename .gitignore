@@ -13,7 +13,6 @@ next-env.d.ts
 dist
 dist-ssr
 *.local
-.husky
 
 # Editor directories and files
 .vscode/*
